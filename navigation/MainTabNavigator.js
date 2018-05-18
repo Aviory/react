@@ -1,12 +1,14 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform ,Image,StyleSheet, View} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import AboutUsScreen from '../screens/AboutUsScreen';
+import HistoryScreen from '../screens/HistoryScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ContactScreen from '../screens/ContactScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -14,57 +16,41 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
     tabBarLabel: 'Home',
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            focused={focused}
-            source={require('../assets/icons/imgHome/a.png')}
-            style={{width: 40, height: 40}}
-        />
+    tabBarIcon: (
+        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_home/a.png")}/>
     ),
 };
 
-
 const HistoryStack = createStackNavigator({
-  Links: LinksScreen,
+    History: HistoryScreen,
 });
 
 HistoryStack.navigationOptions = {
   tabBarLabel: 'History',
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            focused={focused}
-            name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-        />
+    tabBarIcon: (
+        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_history/na.png")}/>
     ),
 };
 
-
-
 const ContactStack = createStackNavigator({
-    Settings: SettingsScreen,
+    Contact: ContactScreen,
 });
 
 ContactStack.navigationOptions = {
     tabBarLabel: 'Contact',
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            focused={focused}
-            name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-        />
+    tabBarIcon: (
+        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_contact/na.png")}/>
     ),
 };
 
 const AboutUsStack = createStackNavigator({
-    Settings: SettingsScreen,
+    Settings: AboutUsScreen,
 });
 
 AboutUsStack.navigationOptions = {
     tabBarLabel: 'About Us',
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            focused={focused}
-            name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-        />
+    tabBarIcon: (
+        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_aboutus/na.png")}/>
     ),
 };
 
@@ -74,15 +60,16 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-    />
-  ),
+    tabBarIcon: (
+        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_settings/na.png")}/>
+    ),
 };
 
-
+{/*<TabBarIcon*/}
+    {/*focused={focused}*/}
+    {/*name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}*/}
+{/*/>*/}
+{/*),*/}
 
 export default createBottomTabNavigator({
   HomeStack,
@@ -91,3 +78,11 @@ export default createBottomTabNavigator({
   AboutUsStack,
   SettingsStack,
 });
+
+// const styles = StyleSheet.create({
+//     iconStyle: {
+//         width: 25,
+//         height: 25,
+//         margin: 3,
+//     },
+// });

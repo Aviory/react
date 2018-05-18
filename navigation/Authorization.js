@@ -11,9 +11,9 @@ export default class LinksScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.getStartedText}>
-                    Change this text and your app will automatically reload.
-                </Text>
+                {/*<Text style={styles.getStartedText}>*/}
+                    {/*Change this text and your app will automatically reload.*/}
+                {/*</Text>*/}
                 <Button
                     onPress={onPressLearnMore}
                     title="Learn More"

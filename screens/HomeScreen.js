@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View, AppRegistry, TextInput,Switch
+  View, AppRegistry, TextInput,Switch ,Dimensions
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import ToggleSwitch from 'toggle-switch-react-native';
@@ -26,46 +26,66 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
+              <View style={styles.inputView}>
+                  <MonoText style={styles.topText}>
+                      Ferry
+                  </MonoText>
                 <TextInput
-                  style={styles.welcomeImage}
+                  style={styles.inputText}
                 />
-              <TextInput
-                  style={styles.welcomeImage}
-              />
-              <TextInput
-                  style={styles.welcomeImage}
-              />
+              </View>
+              <View style={styles.inputView}>
+                  <MonoText style={styles.topText}>
+                      Department
+                  </MonoText>
+                <TextInput
+                  style={styles.inputText}
+                />
+              </View>
+              <View style={styles.inputView}>         
+                  <MonoText style={styles.topText}>   
+                      Reason
+                  </MonoText>                         
+                <TextInput                            
+                  style={styles.inputText}            
+                />                                    
+              </View>                                 
               <View>
-                  <Text style={styles.toggleText}>Send report to email</Text>
-                  <ToggleSwitch onToggle={this.onToggle} style={styles.toggleBtn} label="" />
+                  {/*<Text style={styles.toggleText}>Send report to email</Text>*/}
+                  <ToggleSwitch onToggle={this.onToggle} style={styles.toggleBtn} label="Send report to email" />
 
-                    <Text style={styles.toggleText}>Injury at work</Text>
-                  <ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn} label="" />
+                    {/*<Text style={styles.toggleText}>Injury at work</Text>*/}
+                  <ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn} label="Injury at work" />
+              </View>
+
+              <View style={styles.sickContainer}>
+                  <Image style={styles.imageSick} source={require("../assets/icons/ic_sick/ic-sick.png")}/>
+                  <Text style={styles.imageText}>Sick</Text>
               </View>
 
           </View>
+          {/*<View style={styles.getStartedContainer}>*/}
+            {/*{this._maybeRenderDevelopmentModeWarning()}*/}
+          {/*</View>*/}
 
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
+          {/*<View style={styles.helpContainer}>*/}
+            {/*<TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>*/}
+              {/*<Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>*/}
+            {/*</TouchableOpacity>*/}
+          {/*</View>*/}
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
+        {/*<View style={styles.tabBarInfoContainer}>*/}
+          {/*<Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>*/}
 
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
+          {/*<View style={[styles.codeHighlightContainer, styles.navigationFilename]}>*/}
+            {/*<MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>*/}
+          {/*</View>*/}
+        {/*</View>*/}
       </View>
     );
   }
+
 
   _maybeRenderDevelopmentModeWarning() {
     if (__DEV__) {
@@ -117,7 +137,9 @@ const styles = StyleSheet.create({
         marginLeft: 20,
 
     },toggleBtn:{
-        marginRight: 20,
+
+        marginLeft: 50,
+        marginTop:50,
     },
     MainContainer :{
 
@@ -135,68 +157,63 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
+    sickContainer :{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 30,
+         width: 158,
+         height: 131,
+        backgroundColor: '#fd5858',
+    },
+    imageSick: {
+        width: 25,
+        height: 25,
+        margin: 3,
+        backgroundColor: '#fd5858',
+    },
+    imageText:{
+      marginTop:15,
+       color:'#ffffff'
+    } ,
   welcomeImage: {
     width: 150,
     height: 80,
     marginTop: 3,
     marginLeft: -10,
   },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-  },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
+  topText:{
+        margin:10,
+        fontSize:12,
+        opacity:0.6,
+    },
+    inputView:{
+      borderWidth: 0.5,
+      borderRadius: 5,
+      margin:10,
+      width: Dimensions.get('window').width-20,
+      height: 70,
+    } ,
+  // tabBarInfoContainer: {
+  //   position: 'absolute',
+  //   bottom: 0,
+  //   left: 0,
+  //   right: 0,
+  //   ...Platform.select({
+  //     ios: {
+  //       shadowColor: 'black',
+  //       shadowOffset: { height: -3 },
+  //       shadowOpacity: 0.1,
+  //       shadowRadius: 3,
+  //     },
+  //     android: {
+  //       elevation: 20,
+  //     },
+  //   }),
+  //   alignItems: 'center',
+  //   backgroundColor: '#fbfbfb',
+  //   paddingVertical: 20,
+  // },
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',

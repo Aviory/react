@@ -6,15 +6,20 @@ import {
     StyleSheet,
     Text,TextInput,
     TouchableOpacity,
-    View, AppRegistry,Dimensions,Button,
+    View, AppRegistry, Button,Dimensions
 } from 'react-native';
 import { ExpoConfigView } from '@expo/samples';
 import {MonoText} from "../components/StyledText";
+import ToggleSwitch from 'toggle-switch-react-native';
 
-export default class SettingsScreen extends React.Component {
+export default class ContactScreen extends React.Component {
     static navigationOptions = {
         title: '',
     };
+
+    onToggle(isOn){
+
+    }
     onPressLearnMore(){
 
     }
@@ -26,46 +31,27 @@ export default class SettingsScreen extends React.Component {
             <View style={styles.container}>
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-                    <Text style={styles.SettingsText}>
-                        Settings
+                    <Text style={styles.ContactText}>
+                        Contact
                     </Text>
                     <View style={styles.inputView}>
                         <MonoText style={styles.topText}>
-                            Full name
+                            Message
                         </MonoText>
-                        <TextInput
-                            style={styles.inputText}
-                        />
+                        <TextInput style={styles.inputText}>
+
+
+                        </TextInput>
                     </View>
-                    <View style={styles.inputView}>
-                        <MonoText style={styles.topText}>
-                            Personal namber / Samordningsnammer
-                        </MonoText>
-                        <TextInput
-                            style={styles.inputText}
-                        />
-                    </View>
-                    <View style={styles.inputView}>
-                        <MonoText style={styles.topText}>
-                            Email
-                        </MonoText>
-                        <TextInput
-                            style={styles.inputText}
-                        />
-                    </View>
-                    <View style={styles.inputView}>
-                        <MonoText style={styles.topText}>
-                            Language
-                        </MonoText>
-                        <TextInput
-                            style={styles.inputText}
-                        />
-                    </View>
+
+                    <ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn} label="Receive status report" />
+
                     <Button style={styles.btnStyle}
                             onPress={this.onPressLearnMore}
-                            title="Save"
+                            title="Submit"
                             accessibilityLabel="click this"
                     />
+
                 </ScrollView>
             </View>
         )
@@ -77,19 +63,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    topText:{
-        margin:10,
-        fontSize:12,
-        opacity:0.6,
-    },
     inputView:{
         borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 2,
         margin:10,
         width: Dimensions.get('window').width-20,
-        height: 70,
-    } ,
-    SettingsText:{
+        height: Dimensions.get('window').height/2
+    },
+    ContactText:{
         fontSize:24,
         margin:10,
         color:'#58585d'
@@ -97,6 +78,11 @@ const styles = StyleSheet.create({
     inputText:{
         margin:10,
         fontSize:16,
+    },
+    topText:{
+        margin:10,
+        fontSize:12,
+        opacity:0.6,
     },
     btnStyle:{
         // align:'center',
