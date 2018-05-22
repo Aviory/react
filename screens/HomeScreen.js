@@ -50,13 +50,15 @@ export default class HomeScreen extends React.Component {
                   style={styles.inputText}            
                 />                                    
               </View>                                 
-              <View>
-                  {/*<Text style={styles.toggleText}>Send report to email</Text>*/}
-                  <ToggleSwitch onToggle={this.onToggle} style={styles.toggleBtn} label="Send report to email" />
 
-                    {/*<Text style={styles.toggleText}>Injury at work</Text>*/}
-                  <ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn} label="Injury at work" />
-              </View>
+                  <View style={styles.toggleContainer}>
+                      <Text style={styles.toggleText}>Send report to email</Text>
+                      <ToggleSwitch onToggle={this.onToggle} style={styles.toggleBtn}  />
+                  </View>
+                  <View style={styles.toggleContainer}>
+                        <Text style={styles.toggleText}>Injury at work</Text>
+                        <ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn}  />
+                  </View>
 
               <View style={styles.sickContainer}>
                   <Image style={styles.imageSick} source={require("../assets/icons/ic_sick/ic-sick.png")}/>
@@ -133,13 +135,30 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textAlign: 'center',
   },
+    toggleContainer:{
+        width:Dimensions.get('window').width-10,
+       // flex:1,
+       flexDirection: 'row',
+        // alignContent: 'stretch'
+       justifyContent: 'space-around'
+    },
     toggleText:{
         marginLeft: 20,
-
+         marginTop:10,
+         // position: 'relative',
+         // left:0,
+        alignSelf:'flex-start',
     },toggleBtn:{
+        // width: Dimensions.get('window').width-10,
+        // position: 'relative',
+        // right:0,
+        // top:0,
+        // paddingLeft:55,
+         alignSelf: 'flex-end'  ,
+         // justifyContent: 'center',
+         // alignItems: 'center',
 
-        marginLeft: 50,
-        marginTop:50,
+        // marginTop:80,
     },
     MainContainer :{
 
@@ -167,8 +186,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fd5858',
     },
     imageSick: {
-        width: 25,
-        height: 25,
+        width: 45,
+        height: 45,
         margin: 3,
         backgroundColor: '#fd5858',
     },
@@ -190,8 +209,8 @@ const styles = StyleSheet.create({
     inputView:{
       borderWidth: 0.5,
       borderRadius: 5,
-      margin:10,
-      width: Dimensions.get('window').width-20,
+      margin:20,
+      width: Dimensions.get('window').width-40,
       height: 70,
     } ,
   // tabBarInfoContainer: {

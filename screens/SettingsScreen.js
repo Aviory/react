@@ -39,7 +39,7 @@ export default class SettingsScreen extends React.Component {
                     </View>
                     <View style={styles.inputView}>
                         <MonoText style={styles.topText}>
-                            Personal namber / Samordningsnammer
+                            Personal number / Samordningsnammer
                         </MonoText>
                         <TextInput
                             style={styles.inputText}

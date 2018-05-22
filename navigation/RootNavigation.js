@@ -1,14 +1,23 @@
 import React from 'react';
 import { Notifications } from 'expo';
-import { createSwitchNavigator } from 'react-navigation';
+import {createStackNavigator, createSwitchNavigator, StackNavigator} from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
+import Authorization from './Authorization';
+import ReportSick from '../screens/ReportSick';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 const AppNavigator = createSwitchNavigator({
   // You could add another route here for authentication.
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-  Main: MainTabNavigator,
+    Main: Authorization,
+    Home: MainTabNavigator,
+  // Main: MainTabNavigator,
+});
+const AppScreen = createStackNavigator({
+    Auth: { screen: ReportSick },
+    Auth: { screen: Authorization },
+    Home: { screen: MainTabNavigator },
 });
 
 export default class RootNavigation extends React.Component {
@@ -39,3 +48,4 @@ export default class RootNavigation extends React.Component {
     console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`);
   };
 }
+
