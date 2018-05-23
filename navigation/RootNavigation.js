@@ -12,13 +12,14 @@ const AppNavigator = createSwitchNavigator({
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
     Main: Authorization,
     Home: MainTabNavigator,
-  // Main: MainTabNavigator,
+    Report: ReportSick ,
 });
-const AppScreen = createStackNavigator({
-    Auth: { screen: ReportSick },
-    Auth: { screen: Authorization },
-    Home: { screen: MainTabNavigator },
-});
+
+// const AppScreen = createStackNavigator({// top navigate screens
+//     Auth: { screen: ReportSick },
+//     Auth: { screen: Authorization },
+//     Home: { screen: MainTabNavigator },
+// });
 
 export default class RootNavigation extends React.Component {
   componentDidMount() {

@@ -22,12 +22,19 @@ export default class HomeScreen extends React.Component {
 
     }
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.smallText}>Report sick</Text>
+            <View style={styles.textBtn}>
+                <Button style={styles.smallText}
+                        title="Report sick"
+                        color={'#888888'}
+                        onPress={() => navigate('Home')}>
+                </Button>
+            </View>
                 <View style={styles.btnStyle}>
                     <Button
-                        // onPress={() => navigate('Home')}
+                        onPress={() => navigate('Home')}
                         title="Onboard"
                         color="#fff"
                         accessibilityLabel="Learn more about this purple button"
@@ -48,7 +55,7 @@ export default class HomeScreen extends React.Component {
                 <View style={styles.btnStyle}>
                     <Button
                         // onPress={() => navigate('Home')}
-                        title="Ьщку"
+                        title="More than 7 days"
                         color="#fff"
                         accessibilityLabel="Learn more about this purple button"
                     />
@@ -98,5 +105,9 @@ const styles = StyleSheet.create({
         margin:10,
         marginTop:15,
     },
+    textBtn:{
+        marginTop:15,
+        width: Dimensions.get('window').width,
+    }
 
 });

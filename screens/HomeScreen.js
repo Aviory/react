@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View, AppRegistry, TextInput,Switch ,Dimensions
+  View, AppRegistry, TextInput,Switch ,Dimensions,Button
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import ToggleSwitch from 'toggle-switch-react-native';
@@ -22,6 +22,7 @@ export default class HomeScreen extends React.Component {
 
     }
   render() {
+      const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -62,9 +63,13 @@ export default class HomeScreen extends React.Component {
 
               <View style={styles.sickContainer}>
                   <Image style={styles.imageSick} source={require("../assets/icons/ic_sick/ic-sick.png")}/>
-                  <Text style={styles.imageText}>Sick</Text>
-              </View>
+                  <Button style={styles.sickBtn}
+                          title="Sick"
+                          color={'#fff'}
+                        onPress={() => navigate('Report')}>
 
+                  </Button>
+              </View>
           </View>
           {/*<View style={styles.getStartedContainer}>*/}
             {/*{this._maybeRenderDevelopmentModeWarning()}*/}
@@ -184,6 +189,9 @@ const styles = StyleSheet.create({
          width: 158,
          height: 131,
         backgroundColor: '#fd5858',
+    },
+    sickBtn:{
+
     },
     imageSick: {
         width: 45,
