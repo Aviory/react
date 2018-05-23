@@ -16,6 +16,7 @@ export default class Authorization extends React.Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
+
                 {/*<Text style={styles.getStartedText}>*/}
                     {/*Change this text and your app will automatically reload.*/}
                 {/*</Text>*/}
@@ -45,6 +46,7 @@ export default class Authorization extends React.Component {
                         accessibilityLabel="Learn more about this purple button"
                     />
                 </View>
+
             </View>
         );
     }
@@ -84,6 +86,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width-20,
         height: 70,
         justifyContent: 'center'
-    }
+    },
+
 
 });

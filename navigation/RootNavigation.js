@@ -6,6 +6,7 @@ import MainTabNavigator from './MainTabNavigator';
 import Authorization from './Authorization';
 import ReportSick from '../screens/ReportSick';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
+import FragmentDialog from "../screens/FragmentDialog";
 
 const AppNavigator = createSwitchNavigator({
   // You could add another route here for authentication.
@@ -13,6 +14,8 @@ const AppNavigator = createSwitchNavigator({
     Main: Authorization,
     Home: MainTabNavigator,
     Report: ReportSick ,
+    Dialog: FragmentDialog,
+
 });
 
 // const AppScreen = createStackNavigator({// top navigate screens

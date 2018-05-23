@@ -18,48 +18,70 @@ export default class HomeScreen extends React.Component {
         header: null,
     };
 
-    onToggle(isOn){
+    onToggle(){
 
     }
     render() {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-            <View style={styles.textBtn}>
-                <Button style={styles.smallText}
-                        title="Report sick"
-                        color={'#888888'}
-                        onPress={() => navigate('Home')}>
-                </Button>
-            </View>
-                <View style={styles.btnStyle}>
-                    <Button
-                        onPress={() => navigate('Home')}
-                        title="Onboard"
-                        color="#fff"
-                        accessibilityLabel="Learn more about this purple button"
-                    />
-                </View>
-                <Text style={styles.smallText}>Text about onboard</Text>
-                <View style={styles.daysContainer}>
-                    <View style={styles.days}>
-                        <Text style={styles.textDay}>Day 1</Text></View>
-                    <View style={styles.days}>
-                        <Text style={styles.textDay}>Day 2</Text></View>
-                    <View style={styles.days}>
-                        <Text style={styles.textDay}>Day 3</Text></View>
-                </View>
+                <ScrollView>
+                    <View style={styles.textBtn}>
+                        <Image style={styles.smallText} source={require("../assets/icons/img_close/ic-close.png")}
+                               onPress={() => navigate('Home')}/>
+                        <Button style={styles.closeBtn}
+                                title="Report sick"
+                                color={'#888888'}
+                                onPress={() => navigate('Home')}>
+                        </Button>
+                    </View>
+                    <View style={styles.btnStyleClick}>
+                        <Button
+                            onPress={() => navigate('Home')}
+                            title="Onboard"
+                            color="#fff"
+                        />
+                    </View>
+                    <Text style={styles.smallText}>Text about onboard</Text>
+                    <View style={styles.daysContainer}>
+                        <View style={styles.days}>
+                            <Text style={styles.textDay}>Day 1</Text></View>
+                        <View style={styles.days}>
+                            <Text style={styles.textDay}>Day 2</Text></View>
+                        <View style={styles.days}>
+                            <Text style={styles.textDay}>Day 3</Text></View>
+                    </View>
 
-                <Text style={styles.smallText}>Text about 3 day</Text>
+                    <Text style={styles.smallText}>Text about 3 day</Text>
 
-                <View style={styles.btnStyle}>
-                    <Button
-                        // onPress={() => navigate('Home')}
-                        title="More than 7 days"
-                        color="#fff"
-                        accessibilityLabel="Learn more about this purple button"
-                    />
-                </View>
+                    <View style={styles.btnStyle}>
+                        <Button
+                            onPress={() => navigate('Home')}
+                            title="More than 7 days"
+                            color="#888888"
+                        />
+                    </View>
+                    <Text style={styles.smallText}>Text about 3 day</Text>
+
+                    <View style={styles.dateContainer}>
+                        <View>
+                            <Text style={styles.dateText}>You want to register sick on</Text>
+                        </View>
+                    </View>
+                    <View style={styles.dateContainer}>
+                        <View>
+                            <Text style={styles.dateDataText}>01 Feb 2018</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.btnStyleClick}>
+                        <Button
+                            onPress={() => navigate('Dialog')}
+                            title="Accept"
+                            color="#fff"
+                        />
+                    </View>
+                </ScrollView>
             </View>
         );
     }
@@ -69,12 +91,23 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        paddingBottom:15,
+        paddingTop:10,
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
         backgroundColor: '#fff',
     },
     btnStyle:{
         marginTop:30,
+        borderWidth: 0.5,
+        borderRadius: 5,
+        backgroundColor:'#e8e8e8',
+        margin:10,
+        width: Dimensions.get('window').width-20,
+        height: 70,
+        justifyContent: 'center'
+    },
+    btnStyleClick:{
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#02509f',
@@ -85,9 +118,12 @@ const styles = StyleSheet.create({
     },
     daysContainer:{
         marginTop:30,
+        flex:1,
+        // marginLeft:15,
         flexDirection: 'row',
+        // flexWrap: 'wrap',
         justifyContent: 'space-around',
-        width: Dimensions.get('window').width-20,
+        width: Dimensions.get('window').width,
         height: 70,
     },
     days:{
@@ -99,15 +135,40 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textDay:{
-
+        color:'#888888',
     },
     smallText:{
         margin:10,
         marginTop:15,
+
+    },
+    closeBtn:{
+        margin:10,
+        marginTop:15,
+        fontSize: 20,
     },
     textBtn:{
         marginTop:15,
         width: Dimensions.get('window').width,
+        flexDirection: 'row',
+    },
+    dateContainer:{
+        width: Dimensions.get('window').width,
+        flex:1,
+        flexDirection: 'row',
+        display: 'flex',
+        justifyContent: 'center',
+    },
+    dateText:{
+        fontSize:16,
+    },
+    dateDataText:{
+        fontSize:20,
+        fontWeight: 'bold',
+    },
+    dateTextContainer:{
+
+
     }
 
 });
