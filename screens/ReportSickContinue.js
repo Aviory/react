@@ -39,16 +39,28 @@ export default class ReportSickContinue extends React.Component {
                     <Text style={styles.smallText}>Text about onboard</Text>
                     <View style={styles.daysContainer}>
                         <View style={styles.days}>
-                            <Text style={styles.textDay}>Day 4</Text></View>
+                            <View style={styles.daysRow}>
+                                <Text style={styles.textDay}>Day 4</Text>
+                            </View>
+                        </View>
                         <View style={styles.days}>
-                            <Text style={styles.textDay}>Day 5</Text></View>
+                            <View style={styles.daysRow}>
+                                 <Text style={styles.textDay}>Day 5</Text>
+                            </View>
+                        </View>
                         <View style={styles.days}>
-                            <Text style={styles.textDay}>Day 6</Text></View>
+                            <View style={styles.daysRow}>
+                                 <Text style={styles.textDay}>Day 6</Text>
+                            </View>
+                        </View>
                         <View style={styles.days}>
-                            <Text style={styles.textDay}>Day 7</Text></View>
+                            <View style={styles.daysRow}>
+                                <Text style={styles.textDay}>Day 7</Text>
+                            </View>
+                        </View>
                     </View>
 
-                    <Text style={styles.smallText}>Text day 4-7 </Text>
+                    <Text style={styles.smallText}>Text day 4-7</Text>
 
                     <View style={styles.btnStyle}>
                         <Button
@@ -57,43 +69,44 @@ export default class ReportSickContinue extends React.Component {
                             color="#888888"
                         />
                     </View>
-                    <Text style={styles.smallText}>Text about more than > 7/Text>
+                    <Text style={styles.smallText}>Text about more than > 7/Text> </Text>
 
-                    <View style={styles.dateContainer}>
-                        <View>
-                            <Text style={styles.dateText}>You want to register sick on</Text>
+                        <View style={styles.dateContainer}>
+                            <View>
+                                <Text style={styles.dateText}>You want to register sick on</Text>
+                            </View>
                         </View>
-                    </View>
-                    <View style={styles.dateContainer}>
-                        <View>
-                            <Text style={styles.dateDataText}>01 Feb 2018</Text>
+                        <View style={styles.dateContainer}>
+                            <View>
+                                <Text style={styles.dateDataText}>01 Feb 2018</Text>
+                            </View>
                         </View>
-                    </View>
 
-                    <View style={styles.btnStyleClick}>
-                        <Button
-                            onPress={() => navigate('Dialog')}
-                            title="Accept"
-                            color="#fff"
-                        />
-                    </View>
+                        <View style={styles.btnStyleClick}>
+                            <Button
+                                onPress={() => navigate('Dialog')}
+                                title="Accept"
+                                color="#fff"
+                            />
+                        </View>
+
                 </ScrollView>
             </View>
-        );
+    );
     }
 
 
-}
+    }
 
-const styles = StyleSheet.create({
-    container: {
+    const styles = StyleSheet.create({
+        container: {
         paddingBottom:15,
         paddingTop:10,
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
         backgroundColor: '#fff',
     },
-    btnStyle:{
+        btnStyle:{
         marginTop:30,
         borderWidth: 0.5,
         borderRadius: 5,
@@ -103,7 +116,7 @@ const styles = StyleSheet.create({
         height: 70,
         justifyContent: 'center'
     },
-    btnStyleClick:{
+        btnStyleClick:{
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#02509f',
@@ -112,59 +125,62 @@ const styles = StyleSheet.create({
         height: 70,
         justifyContent: 'center'
     },
-    daysContainer:{
+        daysContainer:{
         marginTop:30,
         flex:1,
         // marginLeft:15,
         flexDirection: 'row',
         // flexWrap: 'wrap',
         justifyContent: 'space-around',
-        width: Dimensions.get('window').width,
+        width: Dimensions.get('window').width-20,
+        marginLeft:10,
         height: 70,
     },
-    days:{
+        days:{
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#e8e8e8',
-        width: 90,
+        // width: 80,
         height: 70,
+            paddingRight:10,
+            paddingLeft:10,
         justifyContent: 'center',
     },
-    textDay:{
+        textDay:{
         color:'#888888',
     },
-    smallText:{
+        smallText:{
         margin:10,
         marginTop:15,
 
     },
-    closeBtn:{
+        closeBtn:{
         margin:10,
         marginTop:15,
         fontSize: 20,
     },
-    textBtn:{
+        textBtn:{
         marginTop:15,
         width: Dimensions.get('window').width,
         flexDirection: 'row',
     },
-    dateContainer:{
+        dateContainer:{
         width: Dimensions.get('window').width,
         flex:1,
         flexDirection: 'row',
         display: 'flex',
         justifyContent: 'center',
     },
-    dateText:{
+        dateText:{
         fontSize:16,
     },
-    dateDataText:{
+        dateDataText:{
         fontSize:20,
         fontWeight: 'bold',
     },
-    dateTextContainer:{
+        dateTextContainer:{
 
 
     }
 
-});
+    });

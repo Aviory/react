@@ -18,7 +18,7 @@ export default class ResultScreen extends React.Component {
                         </View>
                         <View >
                             <Text style={styles.text}>
-                                Information sent successfully
+                                Something went wrong, please try again
                             </Text>
                         </View>
                         <View style={styles.acceptBtn}>

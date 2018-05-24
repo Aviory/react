@@ -25,7 +25,7 @@ export default class StatusSickHomeScreen extends React.Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+                <ScrollView>
                     <View>
                         <View style={styles.dateContainer}>
                             <View>
@@ -49,7 +49,7 @@ export default class StatusSickHomeScreen extends React.Component {
                             <Button style={styles.sickBtn}
                                     title="Healthy"
                                     color={'#fff'}
-                                    onPress={() => navigate('Report')}>
+                                    onPress={() => navigate('Home')}>
 
                             </Button>
                         </View>
@@ -59,7 +59,7 @@ export default class StatusSickHomeScreen extends React.Component {
                             <Button style={styles.sickBtn}
                                     title="Continue sick"
                                     color={'#fff'}
-                                    onPress={() => navigate('Report')}>
+                                    onPress={() => navigate('ReportSickContinue')}>
 
                             </Button>
                         </View>
@@ -194,6 +194,7 @@ const styles = StyleSheet.create({
     dateContainer:{
         width: Dimensions.get('window').width,
         flex:1,
+        marginTop:15,
         flexDirection: 'row',
         display: 'flex',
         justifyContent: 'center',
