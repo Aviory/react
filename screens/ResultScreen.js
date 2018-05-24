@@ -1,8 +1,8 @@
 import React from 'react';
-import { ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight} from 'react-native';
+import { ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight, Image} from 'react-native';
 
 
-export default class FragmentDialog extends React.Component {
+export default class ResultScreen extends React.Component {
     static navigationOptions = {
         title: '',
     };
@@ -13,27 +13,23 @@ export default class FragmentDialog extends React.Component {
             <View style={styles.container}>
                 <View style={styles.dialogView}>
                     <View style={styles.dialogContainer}>
-                        <Text style={styles.text}>
-                            I understand that I have to supply a document from my doctor with indication of my illness
-                        </Text>
-                        <View style={styles.btnContainer}>
-                            <View style={styles.declineBtn}>
-                                <Button
-                                        title="Decline"
-                                        color={'#888888'}
-                                        onPress={() => navigate('Report')}>
-
-                                </Button>
-                            </View>
+                        <View style={styles.imageContainer}>
+                             <Image style={styles.smallText} source={require("../assets/icons/ic_inform_succsf/mark.png")}/>
+                        </View>
+                        <View >
+                            <Text style={styles.text}>
+                                Information sent successfully
+                            </Text>
+                        </View>
                             <View style={styles.acceptBtn}>
                                 <Button
-                                        title="Accept"
-                                        color={'#888888'}
-                                        onPress={() => navigate('ResulfSuccs')}>
+                                    title="OK"
+                                    color={'#888888'}
+                                    onPress={() => navigate('HomeSick')}>
                                 </Button>
                             </View>
 
-                        </View>
+
                     </View>
                 </View>
             </View>
@@ -52,7 +48,7 @@ const styles = StyleSheet.create({
     },
     dialogView:{
         width: Dimensions.get('window').width-20,
-        height: Dimensions.get('window').height/3,
+        height: Dimensions.get('window').height/2,
         marginLeft:10,
         backgroundColor: '#fff',
         borderWidth: 0.5,
@@ -63,8 +59,16 @@ const styles = StyleSheet.create({
     },
     dialogContainer:{
         width: Dimensions.get('window').width-20,
-        height: Dimensions.get('window').height/5,
-
+        height: Dimensions.get('window').height/2-20,
+        flex:1,
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+    },
+    imageContainer:{
+        flex:1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop:15,
     },
     btnContainer:{
         flex:1,
@@ -78,25 +82,16 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         paddingRight:10,
         textAlign:'center',
+
     },
     acceptBtn:{
-        width: Dimensions.get('window').width/3,
+        width: Dimensions.get('window').width-40,
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#02509f',
         paddingTop:5,
-    },
-    declineBtn:{
-        width: Dimensions.get('window').width/3,
-        borderWidth: 0.5,
-        borderRadius: 5,
-        paddingTop:5,
-        backgroundColor:'#dee0e2',
-    },
-    buttonContainer: {
-        width: Dimensions.get('window').width/3,
-        borderWidth: 0.5,
-        borderRadius: 5,
-        backgroundColor:'#02509f',
+        marginTop:15,
+        marginBottom:15,
+        marginLeft:10,
     },
 });

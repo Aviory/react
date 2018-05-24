@@ -53,7 +53,9 @@ export default class HomeScreen extends React.Component {
               </View>                                 
 
                   <View style={styles.toggleContainer}>
-                      <Text style={styles.toggleText}>Send report to email</Text>
+                      <View>
+                        <Text style={styles.toggleText}>Send report to email</Text>
+                      </View>
                       <ToggleSwitch onToggle={this.onToggle} style={styles.toggleBtn}  />
                   </View>
                   <View style={styles.toggleContainer}>
@@ -145,7 +147,7 @@ const styles = StyleSheet.create({
        // flex:1,
        flexDirection: 'row',
         // alignContent: 'stretch'
-       justifyContent: 'space-around'
+       justifyContent: 'space-between'
     },
     toggleText:{
         marginLeft: 20,

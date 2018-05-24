@@ -13,7 +13,7 @@ import ToggleSwitch from 'toggle-switch-react-native';
 
 import { MonoText } from '../components/StyledText';
 
-export default class ReportSick extends React.Component {
+export default class ReportSickContinue extends React.Component {
     static navigationOptions = {
         header: null,
     };
@@ -30,38 +30,25 @@ export default class ReportSick extends React.Component {
                         <Image style={styles.smallText} source={require("../assets/icons/img_close/ic-close.png")}
                                onPress={() => navigate('Home')}/>
                         <Button style={styles.closeBtn}
-                                title="Report sick"
+                                title="Report continue sick "
                                 color={'#888888'}
                                 onPress={() => navigate('Home')}>
                         </Button>
                     </View>
-                    <View style={styles.btnStyleClick}>
-                        <Button
-                            onPress={() => navigate('Home')}
-                            title="Onboard"
-                            color="#fff"
-                        />
-                    </View>
+
                     <Text style={styles.smallText}>Text about onboard</Text>
                     <View style={styles.daysContainer}>
                         <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 1</Text>
-                            </View>
-                        </View>
+                            <Text style={styles.textDay}>Day 4</Text></View>
                         <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 2</Text>
-                            </View>
-                        </View>
+                            <Text style={styles.textDay}>Day 5</Text></View>
                         <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 3</Text>
-                            </View>
-                        </View>
+                            <Text style={styles.textDay}>Day 6</Text></View>
+                        <View style={styles.days}>
+                            <Text style={styles.textDay}>Day 7</Text></View>
                     </View>
 
-                    <Text style={styles.smallText}>Text about 3 day</Text>
+                    <Text style={styles.smallText}>Text day 4-7 </Text>
 
                     <View style={styles.btnStyle}>
                         <Button
@@ -70,7 +57,7 @@ export default class ReportSick extends React.Component {
                             color="#888888"
                         />
                     </View>
-                    <Text style={styles.smallText}>Text about 3 day</Text>
+                    <Text style={styles.smallText}>Text about more than > 7/Text>
 
                     <View style={styles.dateContainer}>
                         <View>
@@ -142,11 +129,6 @@ const styles = StyleSheet.create({
         width: 90,
         height: 70,
         justifyContent: 'center',
-    },
-    daysRow:{
-        flexDirection: 'row',
-        justifyContent: 'center',
-
     },
     textDay:{
         color:'#888888',

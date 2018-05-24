@@ -7,14 +7,21 @@ import Authorization from './Authorization';
 import ReportSick from '../screens/ReportSick';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 import FragmentDialog from "../screens/FragmentDialog";
+import ResultScreen from "../screens/ResultScreen";
+import ResultScreenWrong from "../screens/ResultScreenWrong";
+import StatusSickHomeScreen from "../screens/StatusSickHomeScreen";
 
 const AppNavigator = createSwitchNavigator({
   // You could add another route here for authentication.
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
+    HomeSick: StatusSickHomeScreen,
     Main: Authorization,
     Home: MainTabNavigator,
     Report: ReportSick ,
     Dialog: FragmentDialog,
+    ResulfSuccs:ResultScreen,
+    ResulfWrong:ResultScreenWrong,
+
 
 });
 
