@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight} from 'react-native';
+import { ScrollView,Platform,TouchableOpacity, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight} from 'react-native';
 
 
 export default class FragmentDialog extends React.Component {
@@ -18,19 +18,15 @@ export default class FragmentDialog extends React.Component {
                         </Text>
                         <View style={styles.btnContainer}>
                             <View style={styles.declineBtn}>
-                                <Button
-                                        title="Decline"
-                                        color={'#888888'}
-                                        onPress={() => navigate('Report')}>
-
-                                </Button>
+                                <TouchableOpacity onPress={() => navigate('Report')}>
+                                    <Text style={styles.text}>Decline</Text>
+                                </TouchableOpacity>
                             </View>
+
                             <View style={styles.acceptBtn}>
-                                <Button
-                                        title="Accept"
-                                        color={'#888888'}
-                                        onPress={() => navigate('ResulfSuccs')}>
-                                </Button>
+                                <TouchableOpacity onPress={() => navigate('ResulfSuccs')}>
+                                    <Text style={styles.text}>Accept</Text>
+                                </TouchableOpacity>
                             </View>
 
                         </View>
@@ -84,7 +80,8 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#02509f',
-        paddingTop:5,
+        justifyContent: 'center'
+        // paddingTop:5,
     },
     declineBtn:{
         width: Dimensions.get('window').width/3,
@@ -92,6 +89,12 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingTop:5,
         backgroundColor:'#dee0e2',
+        justifyContent: 'center'
+    },
+    btnRow:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+
     },
     buttonContainer: {
         width: Dimensions.get('window').width/3,
@@ -99,4 +102,5 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         backgroundColor:'#02509f',
     },
+
 });

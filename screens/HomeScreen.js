@@ -63,15 +63,12 @@ export default class HomeScreen extends React.Component {
                         <ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn}  />
                   </View>
 
-              <View style={styles.sickContainer}>
+               <TouchableOpacity onPress={() => navigate('Report')}
+                                style={styles.sickContainer}>
                   <Image style={styles.imageSick} source={require("../assets/icons/ic_sick/ic-sick.png")}/>
-                  <Button style={styles.sickBtn}
-                          title="Sick"
-                          color={'#fff'}
-                        onPress={() => navigate('Report')}>
+                  <Text>Sick</Text>
+              </TouchableOpacity>
 
-                  </Button>
-              </View>
           </View>
           {/*<View style={styles.getStartedContainer}>*/}
             {/*{this._maybeRenderDevelopmentModeWarning()}*/}
@@ -129,6 +126,16 @@ export default class HomeScreen extends React.Component {
     );
   };
 }
+
+// const Component = Platform.select({
+//     ios: () => <Button style={styles.sickBtn}
+//                        title="Sick"
+//                        color={'#fff'}
+//                        backgroundColor={'#fd5858'}
+//                        onPress={() => navigate('Report')}>
+//     </Button>,
+//     android: () => <Text>android</Text>,
+// })();
 
 const styles = StyleSheet.create({
   container: {
@@ -193,13 +200,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#fd5858',
     },
     sickBtn:{
+        
+        // backgroundColor: Platform.OS === 'ios' ? '#fd5858' : 'transparent',
+        // color:Platform.OS === 'ios' ? '#888888' : '#fd5858',
 
     },
     imageSick: {
         width: 45,
         height: 45,
         margin: 3,
-        backgroundColor: '#fd5858',
+
     },
     imageText:{
       marginTop:15,
@@ -245,6 +255,6 @@ const styles = StyleSheet.create({
   // },
   helpLinkText: {
     fontSize: 14,
-    color: '#2e78b7',
+    color: '#888888',
   },
 });

@@ -44,7 +44,14 @@ export default class ContactScreen extends React.Component {
                         </TextInput>
                     </View>
 
-                    <ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn} label="Receive status report" />
+                    <View style={styles.toggleContainer}>
+                        <View>
+                            <Text style={styles.toggleText}>Receive status report</Text>
+                        </View>
+                        <ToggleSwitch onToggle={this.onToggle} style={styles.toggleBtn}  />
+                    </View>
+
+                    {/*<ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn} label="Receive status report" />*/}
 
                     <Button style={styles.btnStyle}
                             onPress={this.onPressLearnMore}
@@ -75,6 +82,7 @@ const styles = StyleSheet.create({
         margin:10,
         color:'#58585d'
     },
+
     inputText:{
         margin:10,
         fontSize:16,
@@ -84,7 +92,22 @@ const styles = StyleSheet.create({
         fontSize:12,
         opacity:0.6,
     },
-    btnStyle:{
+    toggleContainer:{
+        width:Dimensions.get('window').width-10,
+        // flex:1,
+        flexDirection: 'row',
+        // alignContent: 'stretch'
+        justifyContent: 'space-between'
+    },
+    toggleText:{
+        marginLeft: 20,
+        marginTop:10,
+        // position: 'relative',
+        // left:0,
+        alignSelf:'flex-start',
+    },
+        btnStyle:{
+        marginTop:10,
         // align:'center',
         color:'#02509f',
         backgroundColor:'#02509f',

@@ -26,15 +26,11 @@ export default class ReportSickContinue extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <View style={styles.textBtn}>
-                        <Image style={styles.smallText} source={require("../assets/icons/img_close/ic-close.png")}
-                               onPress={() => navigate('Home')}/>
-                        <Button style={styles.closeBtn}
-                                title="Report continue sick "
-                                color={'#888888'}
-                                onPress={() => navigate('Home')}>
-                        </Button>
-                    </View>
+                    <TouchableOpacity onPress={() => navigate('Home')}
+                                      style={styles.textBtn}>
+                        <Image style={styles.smallText} source={require("../assets/icons/img_close/ic-close.png")}/>
+                        <Text>Report sick</Text>
+                    </TouchableOpacity>
 
                     <Text style={styles.smallText}>Text about onboard</Text>
                     <View style={styles.daysContainer}>
@@ -63,13 +59,10 @@ export default class ReportSickContinue extends React.Component {
                     <Text style={styles.smallText}>Text day 4-7</Text>
 
                     <View style={styles.btnStyle}>
-                        <Button
-                            onPress={() => navigate('Home')}
-                            title="More than 7 days"
-                            color="#888888"
-                        />
+                        <Text style={styles.text}>More than 7 days</Text>
                     </View>
-                    <Text style={styles.smallText}>Text about more than > 7/Text> </Text>
+
+                    <Text style={styles.smallText}>Text about more than > 7 </Text>
 
                         <View style={styles.dateContainer}>
                             <View>
@@ -82,13 +75,12 @@ export default class ReportSickContinue extends React.Component {
                             </View>
                         </View>
 
-                        <View style={styles.btnStyleClick}>
-                            <Button
-                                onPress={() => navigate('Dialog')}
-                                title="Accept"
-                                color="#fff"
-                            />
-                        </View>
+                    <View style={styles.btnStyleClick}>
+                        <TouchableOpacity onPress={() => navigate('Dialog')}>
+                            <Text style={styles.text}>Accept</Text>
+                        </TouchableOpacity>
+
+                    </View>
 
                 </ScrollView>
             </View>
@@ -150,7 +142,7 @@ export default class ReportSickContinue extends React.Component {
         color:'#888888',
     },
         smallText:{
-        margin:10,
+        margin:20,
         marginTop:15,
 
     },
@@ -160,9 +152,10 @@ export default class ReportSickContinue extends React.Component {
         fontSize: 20,
     },
         textBtn:{
-        marginTop:15,
-        width: Dimensions.get('window').width,
-        flexDirection: 'row',
+            marginTop:15,
+            width: Dimensions.get('window').width,
+            flexDirection: 'row',
+            alignItems: 'baseline',
     },
         dateContainer:{
         width: Dimensions.get('window').width,
@@ -178,9 +171,12 @@ export default class ReportSickContinue extends React.Component {
         fontSize:20,
         fontWeight: 'bold',
     },
-        dateTextContainer:{
+        text:{
+            fontSize:16,
+            paddingLeft:10,
+            paddingRight:10,
+            textAlign:'center',
 
-
-    }
+        },
 
     });

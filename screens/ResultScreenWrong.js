@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight, Image} from 'react-native';
+import { Platform, ScrollView,TouchableOpacity, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight, Image} from 'react-native';
 
 
 export default class ResultScreen extends React.Component {

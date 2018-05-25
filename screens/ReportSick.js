@@ -26,21 +26,24 @@ export default class ReportSick extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <View style={styles.textBtn}>
-                        <Image style={styles.smallText} source={require("../assets/icons/img_close/ic-close.png")}
-                               onPress={() => navigate('Home')}/>
-                        <Button style={styles.closeBtn}
-                                title="Report sick"
-                                color={'#888888'}
-                                onPress={() => navigate('Home')}>
-                        </Button>
-                    </View>
+                    <TouchableOpacity onPress={() => navigate('Home')}
+                                      style={styles.textBtn}>
+                        <Image style={styles.smallText} source={require("../assets/icons/img_close/ic-close.png")}/>
+                        <Text>Report sick</Text>
+                    </TouchableOpacity>
+
+                    {/*<View style={styles.textBtn}>*/}
+                        {/**/}
+                        {/**/}
+                        {/*<Button style={styles.closeBtn}*/}
+                                {/*title="Report sick"*/}
+                                {/*color={Platform.OS === 'ios' ? '#888888' : '#fff'}*/}
+                                {/*textColor={'#888888'}*/}
+                                {/*onPress={() => navigate('Home')}>*/}
+                        {/*</Button>*/}
+                    {/*</View>*/}
                     <View style={styles.btnStyleClick}>
-                        <Button
-                            onPress={() => navigate('Home')}
-                            title="Onboard"
-                            color="#fff"
-                        />
+                        <Text style={styles.text}>Onboard</Text>
                     </View>
                     <Text style={styles.smallText}>Text about onboard</Text>
                     <View style={styles.daysContainer}>
@@ -64,11 +67,7 @@ export default class ReportSick extends React.Component {
                     <Text style={styles.smallText}>Text about 3 day</Text>
 
                     <View style={styles.btnStyle}>
-                        <Button
-                            onPress={() => navigate('Home')}
-                            title="More than 7 days"
-                            color="#888888"
-                        />
+                        <Text style={styles.text}>More than 7 days</Text>
                     </View>
                     <Text style={styles.smallText}>Text about 3 day</Text>
 
@@ -84,11 +83,10 @@ export default class ReportSick extends React.Component {
                     </View>
 
                     <View style={styles.btnStyleClick}>
-                        <Button
-                            onPress={() => navigate('Dialog')}
-                            title="Accept"
-                            color="#fff"
-                        />
+                        <TouchableOpacity onPress={() => navigate('Dialog')}>
+                            <Text style={styles.text}>Accept</Text>
+                        </TouchableOpacity>
+
                     </View>
                 </ScrollView>
             </View>
@@ -165,6 +163,7 @@ const styles = StyleSheet.create({
         marginTop:15,
         width: Dimensions.get('window').width,
         flexDirection: 'row',
+        alignItems: 'baseline',
     },
     dateContainer:{
         width: Dimensions.get('window').width,
@@ -183,6 +182,13 @@ const styles = StyleSheet.create({
     dateTextContainer:{
 
 
-    }
+    },
+    text:{
+        fontSize:16,
+        paddingLeft:10,
+        paddingRight:10,
+        textAlign:'center',
+
+    },
 
 });

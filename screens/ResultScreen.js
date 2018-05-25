@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight, Image} from 'react-native';
+import { Platform,TouchableOpacity, ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight, Image} from 'react-native';
 
 
 export default class ResultScreen extends React.Component {
@@ -22,11 +22,15 @@ export default class ResultScreen extends React.Component {
                             </Text>
                         </View>
                             <View style={styles.acceptBtn}>
-                                <Button
-                                    title="OK"
-                                    color={'#888888'}
-                                    onPress={() => navigate('HomeSick')}>
-                                </Button>
+                                <TouchableOpacity onPress={() => navigate('HomeSick')}
+                                                  style={styles.innerBtn}>
+                                    <Text style={styles.text}>OK</Text>
+                                </TouchableOpacity>
+                                {/*<Button*/}
+                                    {/*title="OK"*/}
+                                    {/*color={Platform.OS === 'ios' ? '#888888' : 'transparent'}*/}
+                                    {/*onPress={() => navigate('HomeSick')}>*/}
+                                {/*</Button>*/}
                             </View>
 
 
@@ -93,5 +97,6 @@ const styles = StyleSheet.create({
         marginTop:15,
         marginBottom:15,
         marginLeft:10,
+        justifyContent: 'center'
     },
 });

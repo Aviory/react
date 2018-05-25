@@ -44,25 +44,38 @@ export default class StatusSickHomeScreen extends React.Component {
                             <Text>Change to:</Text>
                         </View>
 
-                        <View style={styles.healthyContainer}>
+                        <TouchableOpacity onPress={() => navigate('Home')}
+                                          style={styles.healthyContainer}>
                             <Image style={styles.imageHealthy} source={require("../assets/icons/ic_healthy/ic-healthy.png")}/>
-                            <Button style={styles.sickBtn}
-                                    title="Healthy"
-                                    color={'#fff'}
-                                    onPress={() => navigate('Home')}>
+                            <Text>Healthy</Text>
+                        </TouchableOpacity>
 
-                            </Button>
-                        </View>
-
-                        <View style={styles.sickContainer}>
+                        <TouchableOpacity onPress={() => navigate('ReportSickContinue')}
+                                          style={styles.sickContainer}>
                             <Image style={styles.imageSick} source={require("../assets/icons/ic_sick/ic-sick.png")}/>
-                            <Button style={styles.sickBtn}
-                                    title="Continue sick"
-                                    color={'#fff'}
-                                    onPress={() => navigate('ReportSickContinue')}>
+                            <Text>Sick</Text>
+                        </TouchableOpacity>
 
-                            </Button>
-                        </View>
+
+                        {/*<View style={styles.healthyContainer}>*/}
+                            {/*<Image style={styles.imageHealthy} source={require("../assets/icons/ic_healthy/ic-healthy.png")}/>*/}
+                            {/*<Button style={styles.sickBtn}*/}
+                                    {/*title="Healthy"*/}
+                                    {/*color={Platform.OS === 'ios' ? '#ffffff' : 'transparent'}*/}
+                                    {/*onPress={() => navigate('Home')}>*/}
+
+                            {/*</Button>*/}
+                        {/*</View>*/}
+
+                        {/*<View style={styles.sickContainer}>*/}
+                            {/*<Image style={styles.imageSick} source={require("../assets/icons/ic_sick/ic-sick.png")}/>*/}
+                            {/*<Button style={styles.sickBtn}*/}
+                                    {/*title="Continue sick"*/}
+                                    {/*color={Platform.OS === 'ios' ? '#ffffff' : 'transparent'}*/}
+                                    {/*onPress={() => navigate('ReportSickContinue')}>*/}
+
+                            {/*</Button>*/}
+                        {/*</View>*/}
                     </View>
                     {/*<View style={styles.getStartedContainer}>*/}
                     {/*{this._maybeRenderDevelopmentModeWarning()}*/}
@@ -160,10 +173,6 @@ const styles = StyleSheet.create({
         height: 131,
         backgroundColor: '#3ac775',
     },
-
-    sickBtn:{
-
-    },
     imageSick: {
         width: 45,
         height: 45,
@@ -194,7 +203,7 @@ const styles = StyleSheet.create({
     dateContainer:{
         width: Dimensions.get('window').width,
         flex:1,
-        marginTop:15,
+        marginTop:25,
         flexDirection: 'row',
         display: 'flex',
         justifyContent: 'center',
