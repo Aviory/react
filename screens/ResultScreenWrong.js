@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, ScrollView,TouchableOpacity, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text,TouchableHighlight, Image} from 'react-native';
 
 
-export default class ResultScreen extends React.Component {
+export default class ResultScreenWrong extends React.Component {
     static navigationOptions = {
         title: '',
     };

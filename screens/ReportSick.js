@@ -18,15 +18,49 @@ export default class ReportSick extends React.Component {
         header: null,
     };
     state={
-        toggle:false
+        toggle:false,
+        day1:false,
+        day2:false,
+        day3:false,
     }
 
-    _onToggleState(){
-        const newState = this.state.toggle;
-        this.setState({toggle:newState})
+    _onToggleState(id){
+        if(id === "onboard"){
+
+            const newState = !this.state.toggle;
+            this.setState({toggle:newState})
+        }if(id === "day1"){
+
+            const newState = !this.state.day1;
+            this.setState({day1:newState})
+            if(newState){
+                this.setState({day2:false})
+                this.setState({day3:false})
+            }
+        }if(id === "day2"){
+
+            const newState = !this.state.day2;
+            this.setState({day2:newState})
+            if(newState){
+                this.setState({day1:false})
+                this.setState({day3:false})
+            }
+        }if(id === "day3"){
+            const newState = !this.state.day3;
+            this.setState({day3:newState})
+            if(newState){
+                this.setState({day2:false})
+                this.setState({day1:false})
+            }
+        }
     }
     render() {
         const { navigate } = this.props.navigation;
+        // const {toggle} = this.state;
+        const onboardValue = this.state.toggle?"#02509f":"#e8e8e8";
+        const day1Value = this.state.day1?"#02509f":"#e8e8e8";
+        const day2Value = this.state.day2?"#02509f":"#e8e8e8";
+        const day3Value = this.state.day3?"#02509f":"#e8e8e8";
         return (
             <View style={styles.container}>
                 <ScrollView>
@@ -36,36 +70,65 @@ export default class ReportSick extends React.Component {
                         <Text>Report sick</Text>
                     </TouchableOpacity>
 
-
-                    <View style={styles.btnStyleClick}>
-                        <TouchableOpacity onPress={() => this._onToggleState()}>
+                    <View style={{borderWidth: 0.5,
+                        borderRadius: 5,
+                        backgroundColor:onboardValue,
+                        margin:10,
+                        width: Dimensions.get('window').width-20,
+                        height: 60,
+                        justifyContent: 'center'}} >
+                        <TouchableOpacity onPress={() => this._onToggleState("onboard")}>
                             <Text style={styles.text}>Onboard</Text>
                         </TouchableOpacity>
                     </View>
 
                     <Text style={styles.smallText}>Text about onboard</Text>
+
                     <View style={styles.daysContainer}>
-                        <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 1</Text>
-                            </View>
-                        </View>
-                        <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 2</Text>
-                            </View>
-                        </View>
-                        <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 3</Text>
-                            </View>
-                        </View>
+                        <TouchableOpacity onPress={() => this._onToggleState("day1")}
+                                          style={{
+                                              borderWidth: 0.5,
+                                              borderRadius: 5,
+                                              backgroundColor:day1Value,
+                                              width: 90,
+                                              height: 70,
+                                              justifyContent: 'center',
+                                          }}>
+                                <Text style={styles.text}>Day 1</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => this._onToggleState("day2")}
+                                          style={{
+                                              borderWidth: 0.5,
+                                              borderRadius: 5,
+                                              backgroundColor:day2Value,
+                                              width: 90,
+                                              height: 70,
+                                              justifyContent: 'center',
+                                          }}>
+
+                                <Text style={styles.text}>Day 2</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this._onToggleState("day3")}
+                                          style={{
+                                              borderWidth: 0.5,
+                                              borderRadius: 5,
+                                              backgroundColor:day3Value,
+                                              width: 90,
+                                              height: 70,
+                                              justifyContent: 'center',
+                                          }}>
+                                <Text style={styles.text}>Day 3</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <Text style={styles.smallText}>Text about 3 day</Text>
 
-                    <View style={styles.btnStyle}>
-                        <Text style={styles.text}>More than 7 days</Text>
+                    <View style={styles.btnStyle} >
+                        <TouchableOpacity onPress={() => navigate('Dialog')}>
+                            <Text style={styles.text}>More than 7 days</Text>
+                        </TouchableOpacity>
+
                     </View>
                     <Text style={styles.smallText}>Text about 3 day</Text>
 
@@ -103,13 +166,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     btnStyle:{
-        marginTop:30,
+        marginTop:10,
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#e8e8e8',
         margin:10,
         width: Dimensions.get('window').width-20,
-        height: 70,
+        height: 60,
         justifyContent: 'center'
     },
     btnStyleClick:{

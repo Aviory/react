@@ -32,8 +32,6 @@ export default class ResultScreen extends React.Component {
                                     {/*onPress={() => navigate('HomeSick')}>*/}
                                 {/*</Button>*/}
                             </View>
-
-
                     </View>
                 </View>
             </View>

@@ -19,11 +19,57 @@ export default class ReportSickContinue extends React.Component {
         header: null,
     };
 
-    onToggle(){
+    state={
+        day4:false,
+        day5:false,
+        day6:false,
+        day7:false,
+    }
 
+    _onToggleState(id){
+        if(id === "day4"){
+
+            const newState = !this.state.day4;
+            this.setState({day4:newState});
+            if(newState){
+                this.setState({day5:false});
+                this.setState({day6:false});
+                this.setState({day7:false});
+            }
+        }if(id === "day5"){
+
+            const newState = !this.state.day5;
+            this.setState({day5:newState});
+            if(newState){
+                this.setState({day4:false});
+                this.setState({day6:false});
+                this.setState({day7:false});
+            }
+        }if(id === "day6"){
+
+            const newState = !this.state.day6;
+            this.setState({day6:newState});
+            if(newState){
+                this.setState({day4:false});
+                this.setState({day5:false});
+                this.setState({day7:false});
+            }
+        }if(id === "day7"){
+            const newState = !this.state.day7;
+            this.setState({day7:newState});
+            if(newState){
+                this.setState({day4:false});
+                this.setState({day5:false});
+                this.setState({day6:false});
+            }
+        }
     }
     render() {
         const { navigate } = this.props.navigation;
+        const day4Value = this.state.day4?"#02509f":"#e8e8e8";
+        const day5Value = this.state.day5?"#02509f":"#e8e8e8";
+        const day6Value = this.state.day6?"#02509f":"#e8e8e8";
+        const day7Value = this.state.day7?"#02509f":"#e8e8e8";
         return (
             <View style={styles.container}>
                 <ScrollView>
@@ -35,26 +81,50 @@ export default class ReportSickContinue extends React.Component {
 
                     <Text style={styles.smallText}>Text about onboard</Text>
                     <View style={styles.daysContainer}>
-                        <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 4</Text>
-                            </View>
-                        </View>
-                        <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                 <Text style={styles.textDay}>Day 5</Text>
-                            </View>
-                        </View>
-                        <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                 <Text style={styles.textDay}>Day 6</Text>
-                            </View>
-                        </View>
-                        <View style={styles.days}>
-                            <View style={styles.daysRow}>
-                                <Text style={styles.textDay}>Day 7</Text>
-                            </View>
-                        </View>
+                        <TouchableOpacity onPress={() => this._onToggleState("day4")}
+                                          style={{
+                                              borderWidth: 0.5,
+                                              borderRadius: 5,
+                                              backgroundColor:day4Value,
+                                              width: 70,
+                                              height: 70,
+                                              justifyContent: 'center',
+                                          }}>
+                                <Text style={styles.text}>Day 4</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this._onToggleState("day5")}
+                                          style={{
+                                              borderWidth: 0.5,
+                                              borderRadius: 5,
+                                              backgroundColor:day5Value,
+                                              width: 70,
+                                              height: 70,
+                                              justifyContent: 'center',
+                                          }}>
+                                 <Text style={styles.text}>Day 5</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this._onToggleState("day6")}
+                                          style={{
+                                              borderWidth: 0.5,
+                                              borderRadius: 5,
+                                              backgroundColor:day6Value,
+                                              width: 70,
+                                              height: 70,
+                                              justifyContent: 'center',
+                                          }}>
+                                 <Text style={styles.text}>Day 6</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this._onToggleState("day7")}
+                                          style={{
+                                              borderWidth: 0.5,
+                                              borderRadius: 5,
+                                              backgroundColor:day7Value,
+                                              width: 70,
+                                              height: 70,
+                                              justifyContent: 'center',
+                                          }}>
+                                <Text style={styles.text}>Day 7</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <Text style={styles.smallText}>Text day 4-7</Text>
