@@ -61,11 +61,13 @@ export default class SettingsScreen extends React.Component {
                             style={styles.inputText}
                         />
                     </View>
-                    <Button style={styles.btnStyle}
-                            onPress={this.onPressLearnMore}
-                            title="Save"
-                            accessibilityLabel="click this"
-                    />
+                    <View style={styles.btnStyleClick}>
+                        <TouchableOpacity onPress={() => navigate('Home')}>
+                            <Text style={styles.text}>Save</Text>
+                        </TouchableOpacity>
+
+                    </View>
+
                 </ScrollView>
             </View>
         )
@@ -98,11 +100,19 @@ const styles = StyleSheet.create({
         margin:10,
         fontSize:16,
     },
-    btnStyle:{
-        // align:'center',
-        color:'#02509f',
-        backgroundColor:'#02509f',
+    btnStyleClick:{
         borderWidth: 0.5,
-        borderRadius: 2,
-    }
+        borderRadius: 5,
+        backgroundColor:'#02509f',
+        margin:10,
+        width: Dimensions.get('window').width-20,
+        height: 60,
+        justifyContent: 'center'
+    },
+    text:{
+        fontSize:16,
+        paddingLeft:10,
+        paddingRight:10,
+        textAlign:'center',
+    },
 });

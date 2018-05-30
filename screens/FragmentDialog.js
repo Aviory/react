@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     },
     acceptBtn:{
         width: Dimensions.get('window').width/3,
+        height: 60,
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#02509f',
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
     },
     declineBtn:{
         width: Dimensions.get('window').width/3,
+        height: 60,
         borderWidth: 0.5,
         borderRadius: 5,
         paddingTop:5,

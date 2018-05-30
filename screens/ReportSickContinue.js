@@ -12,6 +12,7 @@ import { WebBrowser } from 'expo';
 import ToggleSwitch from 'toggle-switch-react-native';
 
 import { MonoText } from '../components/StyledText';
+import SickTabNavigator from "../navigation/SickTabNavigator";
 
 export default class ReportSickContinue extends React.Component {
     static navigationOptions = {
@@ -26,7 +27,7 @@ export default class ReportSickContinue extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <TouchableOpacity onPress={() => navigate('Home')}
+                    <TouchableOpacity onPress={() => navigate('HomeSick')}
                                       style={styles.textBtn}>
                         <Image style={styles.smallText} source={require("../assets/icons/img_close/ic-close.png")}/>
                         <Text>Report sick</Text>
@@ -114,7 +115,7 @@ export default class ReportSickContinue extends React.Component {
         backgroundColor:'#02509f',
         margin:10,
         width: Dimensions.get('window').width-20,
-        height: 70,
+        height: 60,
         justifyContent: 'center'
     },
         daysContainer:{

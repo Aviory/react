@@ -17,9 +17,13 @@ export default class ReportSick extends React.Component {
     static navigationOptions = {
         header: null,
     };
+    state={
+        toggle:false
+    }
 
-    onToggle(){
-
+    _onToggleState(){
+        const newState = this.state.toggle;
+        this.setState({toggle:newState})
     }
     render() {
         const { navigate } = this.props.navigation;
@@ -32,19 +36,13 @@ export default class ReportSick extends React.Component {
                         <Text>Report sick</Text>
                     </TouchableOpacity>
 
-                    {/*<View style={styles.textBtn}>*/}
-                        {/**/}
-                        {/**/}
-                        {/*<Button style={styles.closeBtn}*/}
-                                {/*title="Report sick"*/}
-                                {/*color={Platform.OS === 'ios' ? '#888888' : '#fff'}*/}
-                                {/*textColor={'#888888'}*/}
-                                {/*onPress={() => navigate('Home')}>*/}
-                        {/*</Button>*/}
-                    {/*</View>*/}
+
                     <View style={styles.btnStyleClick}>
-                        <Text style={styles.text}>Onboard</Text>
+                        <TouchableOpacity onPress={() => this._onToggleState()}>
+                            <Text style={styles.text}>Onboard</Text>
+                        </TouchableOpacity>
                     </View>
+
                     <Text style={styles.smallText}>Text about onboard</Text>
                     <View style={styles.daysContainer}>
                         <View style={styles.days}>
@@ -120,7 +118,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#02509f',
         margin:10,
         width: Dimensions.get('window').width-20,
-        height: 70,
+        height: 60,
         justifyContent: 'center'
     },
     daysContainer:{

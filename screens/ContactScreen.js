@@ -53,11 +53,12 @@ export default class ContactScreen extends React.Component {
 
                     {/*<ToggleSwitch  onToggle={this.onToggle} style={styles.toggleBtn} label="Receive status report" />*/}
 
-                    <Button style={styles.btnStyle}
-                            onPress={this.onPressLearnMore}
-                            title="Submit"
-                            accessibilityLabel="click this"
-                    />
+                    <View style={styles.btnStyleClick}>
+                        <TouchableOpacity onPress={() => this.onPressLearnMore}>
+                            <Text style={styles.text}>Submit</Text>
+                        </TouchableOpacity>
+
+                    </View>
 
                 </ScrollView>
             </View>
@@ -113,5 +114,20 @@ const styles = StyleSheet.create({
         backgroundColor:'#02509f',
         borderWidth: 0.5,
         borderRadius: 2,
-    }
+    },
+    btnStyleClick:{
+        borderWidth: 0.5,
+        borderRadius: 5,
+        backgroundColor:'#02509f',
+        margin:10,
+        width: Dimensions.get('window').width-20,
+        height: 60,
+        justifyContent: 'center'
+    },
+    text:{
+        fontSize:16,
+        paddingLeft:10,
+        paddingRight:10,
+        textAlign:'center',
+    },
 });

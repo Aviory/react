@@ -29,7 +29,6 @@ export default class ResultScreen extends React.Component {
                             </Button>
                         </View>
 
-
                     </View>
                 </View>
             </View>

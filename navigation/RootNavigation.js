@@ -12,14 +12,16 @@ import ResultScreenWrong from "../screens/ResultScreenWrong";
 import StatusSickHomeScreen from "../screens/StatusSickHomeScreen";
 import ReportSickContinue from "../screens/ReportSickContinue";
 import TestScreen from "../screens/TestScreen";
+import SickTabNavigator from "./SickTabNavigator";
 
 const AppNavigator = createSwitchNavigator({
   // You could add another route here for authentication.
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
   //   Test:TestScreen,
-    Home: MainTabNavigator,
-    HomeSick: StatusSickHomeScreen,
     Main: Authorization,
+    Home: MainTabNavigator,
+    HomeSick: SickTabNavigator,
+    SickMain:StatusSickHomeScreen,
     Report: ReportSick ,
     Dialog: FragmentDialog,
     ResulfSuccs:ResultScreen,

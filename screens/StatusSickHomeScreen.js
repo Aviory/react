@@ -12,6 +12,7 @@ import { WebBrowser } from 'expo';
 import ToggleSwitch from 'toggle-switch-react-native';
 
 import { MonoText } from '../components/StyledText';
+import MainTabNavigator from "../navigation/MainTabNavigator";
 
 export default class StatusSickHomeScreen extends React.Component {
     static navigationOptions = {
@@ -136,6 +137,8 @@ export default class StatusSickHomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        width:Dimensions.get('window').width,
+        height:Dimensions.get('window').height,
         // flex: 1,
         // flexDirection: 'column',
         // justifyContent: 'space-around',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput, Text} from 'react-native';
+import { ScrollView, StyleSheet,View, Button,AppRegistry,NavigatorIOS , Dimensions, TextInput,TouchableOpacity, Text} from 'react-native';
 import MainTabNavigator from './MainTabNavigator';
 import { ExpoLinksView } from '@expo/samples';
 import PropTypes from 'prop-types';
@@ -38,13 +38,12 @@ export default class Authorization extends React.Component {
                         Personal number / Samordningsnummer
                     </TextInput>
                 </View>
-                <View style={styles.btnStyle}>
-                    <Button
-                        onPress={() => navigate('Home')}
-                        title="Register"
-                        color="#fff"
-                        accessibilityLabel="Learn more about this purple button"
-                    />
+
+                <View style={styles.btnStyleClick}>
+                    <TouchableOpacity onPress={() => navigate('Home')}>
+                        <Text style={styles.text}>Register</Text>
+                    </TouchableOpacity>
+
                 </View>
 
             </View>
@@ -78,14 +77,20 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom:20,
     },
-    btnStyle:{
+    btnStyleClick:{
         borderWidth: 0.5,
         borderRadius: 5,
         backgroundColor:'#02509f',
         margin:10,
         width: Dimensions.get('window').width-20,
-        height: 70,
+        height: 60,
         justifyContent: 'center'
+    },
+    text:{
+        fontSize:16,
+        paddingLeft:10,
+        paddingRight:10,
+        textAlign:'center',
     },
 
 
