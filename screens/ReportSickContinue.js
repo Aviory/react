@@ -171,8 +171,10 @@ export default class ReportSickContinue extends React.Component {
     },
         btnStyle:{
         marginTop:30,
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#e8e8e8',
         margin:10,
         width: Dimensions.get('window').width-20,
@@ -180,8 +182,10 @@ export default class ReportSickContinue extends React.Component {
         justifyContent: 'center'
     },
         btnStyleClick:{
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#02509f',
         margin:10,
         width: Dimensions.get('window').width-20,
@@ -200,8 +204,10 @@ export default class ReportSickContinue extends React.Component {
         height: 70,
     },
         days:{
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#e8e8e8',
         // width: 80,
         height: 70,
@@ -213,9 +219,8 @@ export default class ReportSickContinue extends React.Component {
         color:'#888888',
     },
         smallText:{
-        margin:20,
-        marginTop:15,
-
+            margin:20,
+            marginTop:15,
     },
         closeBtn:{
         margin:10,

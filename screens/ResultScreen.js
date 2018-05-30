@@ -14,7 +14,7 @@ export default class ResultScreen extends React.Component {
                 <View style={styles.dialogView}>
                     <View style={styles.dialogContainer}>
                         <View style={styles.imageContainer}>
-                             <Image style={styles.smallText} source={require("../assets/icons/ic_inform_succsf/mark.png")}/>
+                             <Image style={styles.image} source={require("../assets/icons/ic_inform_succsf/mark.png")}/>
                         </View>
                         <View >
                             <Text style={styles.text}>
@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     dialogView:{
-        width: Dimensions.get('window').width-20,
-        height: Dimensions.get('window').height/2,
+        width: 336,
+        height: 367,
         marginLeft:10,
         backgroundColor: '#fff',
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
 
         flexDirection: 'column',
         justifyContent: 'center',
@@ -72,6 +72,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop:15,
     },
+    image:{
+        width:129,
+        height:129,
+    },
     btnContainer:{
         flex:1,
         width: Dimensions.get('window').width-20,
@@ -87,14 +91,14 @@ const styles = StyleSheet.create({
 
     },
     acceptBtn:{
-        width: Dimensions.get('window').width-40,
-        borderWidth: 0.5,
-        borderRadius: 5,
+        width: 296,
+        height:56,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#02509f',
-        paddingTop:5,
-        marginTop:15,
-        marginBottom:15,
-        marginLeft:10,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flexDirection: 'row',
     },
 });

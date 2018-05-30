@@ -159,6 +159,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     sickContainer :{
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -168,6 +172,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fd5858',
     },
     healthyContainer :{
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',

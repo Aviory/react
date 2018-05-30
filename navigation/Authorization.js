@@ -59,8 +59,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     inputView:{
-        borderWidth: 0.5,
-        borderRadius: 5,
+
+        borderRadius: 6,
+        backgroundColor: '#ffffff',
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
+
         margin:10,
         width: Dimensions.get('window').width-20,
         height: 70,
@@ -78,8 +83,10 @@ const styles = StyleSheet.create({
         marginBottom:20,
     },
     btnStyleClick:{
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#02509f',
         margin:10,
         width: Dimensions.get('window').width-20,

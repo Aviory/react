@@ -167,8 +167,10 @@ const styles = StyleSheet.create({
     },
     btnStyle:{
         marginTop:10,
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#e8e8e8',
         margin:10,
         width: Dimensions.get('window').width-20,
@@ -176,8 +178,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     btnStyleClick:{
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#02509f',
         margin:10,
         width: Dimensions.get('window').width-20,
@@ -195,8 +199,10 @@ const styles = StyleSheet.create({
         height: 70,
     },
     days:{
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#e8e8e8',
         width: 90,
         height: 70,

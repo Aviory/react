@@ -191,6 +191,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
     sickContainer :{
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -227,8 +231,10 @@ const styles = StyleSheet.create({
         opacity:0.6,
     },
     inputView:{
-      borderWidth: 0.5,
-      borderRadius: 5,
+    borderRadius: 6,
+    borderWidth:1,
+    borderColor:'#cac8cf',
+    borderStyle: 'solid',
       margin:20,
       width: Dimensions.get('window').width-40,
       height: 70,

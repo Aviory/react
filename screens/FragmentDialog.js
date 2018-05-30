@@ -51,8 +51,10 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').height/3,
         marginLeft:10,
         backgroundColor: '#fff',
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
 
         flexDirection: 'column',
         justifyContent: 'center',
@@ -78,8 +80,10 @@ const styles = StyleSheet.create({
     acceptBtn:{
         width: Dimensions.get('window').width/3,
         height: 60,
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#02509f',
         justifyContent: 'center'
         // paddingTop:5,
@@ -87,8 +91,10 @@ const styles = StyleSheet.create({
     declineBtn:{
         width: Dimensions.get('window').width/3,
         height: 60,
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         paddingTop:5,
         backgroundColor:'#dee0e2',
         justifyContent: 'center'
@@ -100,8 +106,10 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         width: Dimensions.get('window').width/3,
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderRadius: 6,
+        borderWidth:1,
+        borderColor:'#cac8cf',
+        borderStyle: 'solid',
         backgroundColor:'#02509f',
     },
 
