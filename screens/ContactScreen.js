@@ -14,7 +14,7 @@ import ToggleSwitch from 'toggle-switch-react-native';
 
 export default class ContactScreen extends React.Component {
     static navigationOptions = {
-        title: '',
+        header: null,
     };
 
     onToggle(isOn){
@@ -38,7 +38,9 @@ export default class ContactScreen extends React.Component {
                         <MonoText style={styles.topText}>
                             Message
                         </MonoText>
-                        <TextInput style={styles.inputText}>
+                        <TextInput style={styles.inputText}
+                                   multiline={true}
+                                   numberOfLines={4}>
 
 
                         </TextInput>
@@ -78,10 +80,11 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         margin:10,
         width: Dimensions.get('window').width-20,
-        height: Dimensions.get('window').height/2
+        height: Dimensions.get('window').height/3
     },
     ContactText:{
         fontSize:24,
+        marginTop:20,
         margin:10,
         color:'#58585d'
     },
@@ -109,23 +112,14 @@ const styles = StyleSheet.create({
         // left:0,
         alignSelf:'flex-start',
     },
-        btnStyle:{
-        marginTop:10,
-        // align:'center',
-        color:'#02509f',
-        backgroundColor:'#02509f',
-        borderRadius: 6,
-        borderWidth:1,
-        borderColor:'#cac8cf',
-        borderStyle: 'solid',
-    },
     btnStyleClick:{
         borderRadius: 6,
         borderWidth:1,
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-        backgroundColor:'#02509f',
-        margin:10,
+        backgroundColor:'#537dff',
+        marginTop:25,
+        marginLeft:10,
         width: Dimensions.get('window').width-20,
         height: 60,
         justifyContent: 'center'
@@ -134,6 +128,7 @@ const styles = StyleSheet.create({
         fontSize:16,
         paddingLeft:10,
         paddingRight:10,
+        color:'#ffffff',
         textAlign:'center',
     },
 });

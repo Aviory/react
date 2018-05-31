@@ -16,8 +16,11 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
     tabBarLabel: 'Home',
-    tabBarIcon: (
-        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_home/a.png")}/>
+    tabBarIcon: ({ focused }) => (
+        <Image
+            source={focused ?require("../assets/icons/ic_home/active/a.png"):require("../assets/icons/ic_home/a.png")}
+            style={{ width: 25, height: 25 }}
+        />
     ),
 };
 
@@ -27,8 +30,11 @@ const HistoryStack = createStackNavigator({
 
 HistoryStack.navigationOptions = {
   tabBarLabel: 'History',
-    tabBarIcon: (
-        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_history/na.png")}/>
+    tabBarIcon: ({ focused }) => (
+        <Image
+            source={focused ?require("../assets/icons/ic_history/active/a.png"):require("../assets/icons/ic_history/na.png")}
+            style={{ width: 25, height: 25 }}
+        />
     ),
 };
 
@@ -38,8 +44,11 @@ const ContactStack = createStackNavigator({
 
 ContactStack.navigationOptions = {
     tabBarLabel: 'Contact',
-    tabBarIcon: (
-        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_contact/na.png")}/>
+    tabBarIcon: ({ focused }) => (
+        <Image
+            source={focused ?require("../assets/icons/ic_contact/active/a.png"):require("../assets/icons/ic_contact/na.png")}
+            style={{ width: 25, height: 25 }}
+        />
     ),
 };
 
@@ -49,8 +58,11 @@ const AboutUsStack = createStackNavigator({
 
 AboutUsStack.navigationOptions = {
     tabBarLabel: 'About Us',
-    tabBarIcon: (
-        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_aboutus/na.png")}/>
+    tabBarIcon: ({ focused }) => (
+        <Image
+            source={focused ?require("../assets/icons/ic_aboutus/active/a.png"):require("../assets/icons/ic_aboutus/na.png")}
+            style={{ width: 25, height: 25 }}
+        />
     ),
 };
 
@@ -60,8 +72,11 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',
-    tabBarIcon: (
-        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_settings/na.png")}/>
+    tabBarIcon: ({ focused }) => (
+        <Image
+            source={focused ?require("../assets/icons/ic_settings/active/copy.png"):require("../assets/icons/ic_settings/na.png")}
+            style={{ width: 25, height: 25 }}
+        />
     ),
 };
 

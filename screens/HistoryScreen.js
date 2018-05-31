@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 export default class HistoryScreen extends React.Component {
     static navigationOptions = {
-        title: '',
+        header: null,
     };
 
     render() {
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     HistoryText:{
         fontSize:24,
         margin:10,
+        marginTop:20,
         color:'#58585d'
     }
 

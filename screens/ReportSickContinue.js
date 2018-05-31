@@ -26,6 +26,10 @@ export default class ReportSickContinue extends React.Component {
         day7:false,
     }
 
+    _calendar(){
+
+    }
+
     _onToggleState(id){
         if(id === "day4"){
 
@@ -67,9 +71,13 @@ export default class ReportSickContinue extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         const day4Value = this.state.day4?"#02509f":"#e8e8e8";
+        const day4Color = this.state.day4?"#ffffff":"#000000";
         const day5Value = this.state.day5?"#02509f":"#e8e8e8";
+        const day5Color = this.state.day5?"#ffffff":"#000000";
         const day6Value = this.state.day6?"#02509f":"#e8e8e8";
+        const day6Color = this.state.day6?"#ffffff":"#000000";
         const day7Value = this.state.day7?"#02509f":"#e8e8e8";
+        const day7Color = this.state.day7?"#ffffff":"#000000";
         return (
             <View style={styles.container}>
                 <ScrollView>
@@ -90,7 +98,10 @@ export default class ReportSickContinue extends React.Component {
                                               height: 70,
                                               justifyContent: 'center',
                                           }}>
-                                <Text style={styles.text}>Day 4</Text>
+                            <Text style={{color:day4Color,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>Day 4</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => this._onToggleState("day5")}
                                           style={{
@@ -101,7 +112,10 @@ export default class ReportSickContinue extends React.Component {
                                               height: 70,
                                               justifyContent: 'center',
                                           }}>
-                                 <Text style={styles.text}>Day 5</Text>
+                            <Text style={{color:day5Color,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>Day 5</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => this._onToggleState("day6")}
                                           style={{
@@ -112,7 +126,10 @@ export default class ReportSickContinue extends React.Component {
                                               height: 70,
                                               justifyContent: 'center',
                                           }}>
-                                 <Text style={styles.text}>Day 6</Text>
+                            <Text style={{color:day6Color,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>Day 6</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => this._onToggleState("day7")}
                                           style={{
@@ -123,14 +140,23 @@ export default class ReportSickContinue extends React.Component {
                                               height: 70,
                                               justifyContent: 'center',
                                           }}>
-                                <Text style={styles.text}>Day 7</Text>
+                            <Text style={{color:day7Color,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>Day 7</Text>
                         </TouchableOpacity>
                     </View>
 
                     <Text style={styles.smallText}>Text day 4-7</Text>
 
-                    <View style={styles.btnStyle}>
-                        <Text style={styles.text}>More than 7 days</Text>
+                    <View style={styles.btnStyle} >
+                        <TouchableOpacity onPress={() => this._calendar()}>
+                            <Text style={{color:'#000000',fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>More than 7 days</Text>
+                        </TouchableOpacity>
+
                     </View>
 
                     <Text style={styles.smallText}>Text about more than > 7 </Text>
@@ -186,7 +212,7 @@ export default class ReportSickContinue extends React.Component {
         borderWidth:1,
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-        backgroundColor:'#02509f',
+        backgroundColor:'#537dff',
         margin:10,
         width: Dimensions.get('window').width-20,
         height: 60,
@@ -252,7 +278,7 @@ export default class ReportSickContinue extends React.Component {
             paddingLeft:10,
             paddingRight:10,
             textAlign:'center',
-
+            color:'#ffffff'
         },
 
     });

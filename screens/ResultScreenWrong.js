@@ -17,7 +17,7 @@ export default class ResultScreenWrong extends React.Component {
                             <Image style={styles.smallText} source={require("../assets/icons/ic_inform_wrong/wrong.png")}/>
                         </View>
                         <View >
-                            <Text style={styles.text}>
+                            <Text style={styles.textBlack}>
                                 Something went wrong, please try again
                             </Text>
                         </View>
@@ -83,15 +83,22 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         paddingRight:10,
         textAlign:'center',
+        color:'#ffffff'
 
+    }, textBlack:{
+        fontSize:16,
+        paddingLeft:10,
+        paddingRight:10,
+        textAlign:'center',
     },
+
     acceptBtn:{
         width: Dimensions.get('window').width-40,
         borderRadius: 6,
         borderWidth:1,
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-        backgroundColor:'#02509f',
+        backgroundColor:'#537dff',
         paddingTop:5,
         marginTop:15,
         marginBottom:15,

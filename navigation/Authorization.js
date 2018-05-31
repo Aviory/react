@@ -9,7 +9,7 @@ import { createStackNavigator,StackNavigator } from 'react-navigation';
 
 export default class Authorization extends React.Component {
     static navigationOptions = {
-        title: '',
+        header: null,
     };
 
     render() {
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     logoText:{
         fontSize:25,
         margin:10,
-        color:'#02509f',
+        color:'#537dff',
         textAlign: 'center',
         marginBottom:20,
     },
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-        backgroundColor:'#02509f',
+        backgroundColor:'#537dff',
         margin:10,
         width: Dimensions.get('window').width-20,
         height: 60,
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         paddingRight:10,
         textAlign:'center',
+        color:'#ffffff'
     },
 
 

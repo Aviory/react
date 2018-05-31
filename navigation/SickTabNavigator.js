@@ -18,7 +18,7 @@ const SHomeStack = createStackNavigator({
 SHomeStack.navigationOptions = {
     tabBarLabel: 'Home',
     tabBarIcon: (
-        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_home/a.png")}/>
+        <Image style={{ width: 25, height: 25 }} source={require("../assets/icons/ic_home/active/a.png")}/>
     ),
 };
 

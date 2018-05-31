@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 export default class AboutUsScreen extends React.Component {
     static navigationOptions = {
-        title: 'About Us',
+        header: null,
     };
 
     render() {
@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
     logoText:{
         fontSize:25,
         margin:10,
-        color:'#02509f',
+        marginTop:20,
+        color:'#537dff',
         textAlign: 'center',
     }
 });

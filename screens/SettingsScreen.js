@@ -13,7 +13,7 @@ import {MonoText} from "../components/StyledText";
 
 export default class SettingsScreen extends React.Component {
     static navigationOptions = {
-        title: '',
+        header: null,
     };
     onPressLearnMore(){
 
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     } ,
     SettingsText:{
         fontSize:24,
+        marginTop:20,
         margin:10,
         color:'#58585d'
     },
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-        backgroundColor:'#02509f',
+        backgroundColor:'#537dff',
         margin:10,
         width: Dimensions.get('window').width-20,
         height: 60,
@@ -118,5 +119,6 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         paddingRight:10,
         textAlign:'center',
+        color:'#ffffff'
     },
 });

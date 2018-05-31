@@ -24,6 +24,10 @@ export default class ReportSick extends React.Component {
         day3:false,
     }
 
+    _calendar(){
+
+    }
+
     _onToggleState(id){
         if(id === "onboard"){
 
@@ -57,9 +61,13 @@ export default class ReportSick extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         // const {toggle} = this.state;
+        const onboardColor = this.state.toggle?"#ffffff":"#000000";
         const onboardValue = this.state.toggle?"#02509f":"#e8e8e8";
+        const day1Color = this.state.day1?"#ffffff":"#000000";
         const day1Value = this.state.day1?"#02509f":"#e8e8e8";
+        const day2Color = this.state.day2?"#ffffff":"#000000";
         const day2Value = this.state.day2?"#02509f":"#e8e8e8";
+        const day3Color = this.state.day3?"#ffffff":"#000000";
         const day3Value = this.state.day3?"#02509f":"#e8e8e8";
         return (
             <View style={styles.container}>
@@ -78,7 +86,10 @@ export default class ReportSick extends React.Component {
                         height: 60,
                         justifyContent: 'center'}} >
                         <TouchableOpacity onPress={() => this._onToggleState("onboard")}>
-                            <Text style={styles.text}>Onboard</Text>
+                            <Text style={{color:onboardColor,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>Onboard</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -94,7 +105,10 @@ export default class ReportSick extends React.Component {
                                               height: 70,
                                               justifyContent: 'center',
                                           }}>
-                                <Text style={styles.text}>Day 1</Text>
+                            <Text style={{color:day1Color,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>Day 1</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => this._onToggleState("day2")}
@@ -107,7 +121,10 @@ export default class ReportSick extends React.Component {
                                               justifyContent: 'center',
                                           }}>
 
-                                <Text style={styles.text}>Day 2</Text>
+                            <Text style={{color:day2Color,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>Day 2</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => this._onToggleState("day3")}
                                           style={{
@@ -118,15 +135,21 @@ export default class ReportSick extends React.Component {
                                               height: 70,
                                               justifyContent: 'center',
                                           }}>
-                                <Text style={styles.text}>Day 3</Text>
+                            <Text style={{color:day3Color,fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>>Day 3</Text>
                         </TouchableOpacity>
                     </View>
 
                     <Text style={styles.smallText}>Text about 3 day</Text>
 
                     <View style={styles.btnStyle} >
-                        <TouchableOpacity onPress={() => navigate('Dialog')}>
-                            <Text style={styles.text}>More than 7 days</Text>
+                        <TouchableOpacity onPress={() => this._calendar()}>
+                            <Text style={{color:'#000000',fontSize:16,
+                                paddingLeft:10,
+                                paddingRight:10,
+                                textAlign:'center'}}>More than 7 days</Text>
                         </TouchableOpacity>
 
                     </View>
@@ -182,7 +205,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-        backgroundColor:'#02509f',
+        backgroundColor:'#537dff',
         margin:10,
         width: Dimensions.get('window').width-20,
         height: 60,
@@ -255,7 +278,7 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         paddingRight:10,
         textAlign:'center',
-
+        color:'#ffffff'
     },
 
 });

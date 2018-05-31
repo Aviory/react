@@ -34,7 +34,7 @@ const AppNavigator = createSwitchNavigator({
 //     Auth: { screen: ReportSick },
 //     Auth: { screen: Authorization },
 //     Home: { screen: MainTabNavigator },
-// });
+// });ба
 
 export default class RootNavigation extends React.Component {
   componentDidMount() {

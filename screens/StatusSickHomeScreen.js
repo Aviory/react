@@ -48,13 +48,13 @@ export default class StatusSickHomeScreen extends React.Component {
                         <TouchableOpacity onPress={() => navigate('Home')}
                                           style={styles.healthyContainer}>
                             <Image style={styles.imageHealthy} source={require("../assets/icons/ic_healthy/ic-healthy.png")}/>
-                            <Text>Healthy</Text>
+                            <Text style={styles.imageText}>Healthy</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => navigate('ReportSickContinue')}
                                           style={styles.sickContainer}>
                             <Image style={styles.imageSick} source={require("../assets/icons/ic_sick/ic-sick.png")}/>
-                            <Text>Sick</Text>
+                            <Text style={styles.imageText}>Sick</Text>
                         </TouchableOpacity>
 
 
@@ -185,19 +185,25 @@ const styles = StyleSheet.create({
         backgroundColor: '#3ac775',
     },
     imageSick: {
-        width: 45,
-        height: 45,
+        width: 59,
+        height: 59,
+        marginBottom:13,
+        marginTop:10,
         margin: 3,
         backgroundColor: '#fd5858',
+        resizeMode:'contain'
     },
     imageHealthy: {
-        width: 45,
-        height: 45,
+        width: 59,
+        height: 59,
+        marginBottom:13,
+        marginTop:10,
         margin: 3,
         backgroundColor: '#3ac775',
+        resizeMode:'contain'
     },
     imageText:{
-        marginTop:15,
+        fontSize:20,
         color:'#ffffff'
     } ,
     welcomeImage: {

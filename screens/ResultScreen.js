@@ -16,22 +16,17 @@ export default class ResultScreen extends React.Component {
                         <View style={styles.imageContainer}>
                              <Image style={styles.image} source={require("../assets/icons/ic_inform_succsf/mark.png")}/>
                         </View>
-                        <View >
-                            <Text style={styles.text}>
+                        <View style={{marginTop:15}}>
+                            <Text style={styles.textInfo}>
                                 Information sent successfully
                             </Text>
                         </View>
-                            <View style={styles.acceptBtn}>
+                        <View style={styles.btnRow}>
                                 <TouchableOpacity onPress={() => navigate('HomeSick')}
-                                                  style={styles.innerBtn}>
+                                                  style={styles.btnStyleClick}>
                                     <Text style={styles.text}>OK</Text>
                                 </TouchableOpacity>
-                                {/*<Button*/}
-                                    {/*title="OK"*/}
-                                    {/*color={Platform.OS === 'ios' ? '#888888' : 'transparent'}*/}
-                                    {/*onPress={() => navigate('HomeSick')}>*/}
-                                {/*</Button>*/}
-                            </View>
+                        </View>
                     </View>
                 </View>
             </View>
@@ -41,7 +36,6 @@ export default class ResultScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
         paddingTop: 15,
@@ -49,56 +43,64 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     dialogView:{
-        width: 336,
-        height: 367,
-        marginLeft:10,
+        width: Dimensions.get('window').width-39,
+        height: 327,
+        marginLeft:20,
+        marginRight:19,
         backgroundColor: '#fff',
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-
-        flexDirection: 'column',
+        borderRadius: 6,
+        borderWidth:1,
+        flexDirection: 'row',
         justifyContent: 'center',
     },
     dialogContainer:{
-        width: Dimensions.get('window').width-20,
-        height: Dimensions.get('window').height/2-20,
-        flex:1,
+        width: Dimensions.get('window').width-38,
+        height: 316,
         flexDirection: 'column',
         justifyContent: 'space-around',
+
     },
     imageContainer:{
-        flex:1,
+
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop:15,
+        marginTop:20,
     },
     image:{
         width:129,
         height:129,
     },
-    btnContainer:{
-        flex:1,
-        width: Dimensions.get('window').width-20,
-        marginTop:10,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+    textInfo: {
+        fontSize: 24,
+        paddingLeft: 10,
+        paddingRight: 10,
+
+        marginBottom:15,
+        textAlign: 'center',
     },
     text:{
-        fontSize:16,
+        fontSize:20,
         paddingLeft:10,
         paddingRight:10,
+        color:'#ffffff',
         textAlign:'center',
-
+        // fontFamily: 'Roboto',
     },
-    acceptBtn:{
-        width: 296,
-        height:56,
+    btnStyleClick:{
         borderRadius: 6,
         borderWidth:1,
         borderColor:'#cac8cf',
         borderStyle: 'solid',
-        backgroundColor:'#02509f',
-        justifyContent: 'center',
+        backgroundColor:'#537dff',
+        width: Dimensions.get('window').width-70,
+        height: 56,
+        marginBottom:20,
+        justifyContent: 'center'
+    },
+    btnRow:{
         flexDirection: 'row',
+        justifyContent: 'center',
     },
 });

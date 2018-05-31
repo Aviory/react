@@ -4,7 +4,7 @@ import { ScrollView,Platform,TouchableOpacity, StyleSheet,View, Button,AppRegist
 
 export default class FragmentDialog extends React.Component {
     static navigationOptions = {
-        title: '',
+        header: null,
     };
 
     render() {
@@ -13,13 +13,15 @@ export default class FragmentDialog extends React.Component {
             <View style={styles.container}>
                 <View style={styles.dialogView}>
                     <View style={styles.dialogContainer}>
-                        <Text style={styles.text}>
-                            I understand that I have to supply a document from my doctor with indication of my illness
-                        </Text>
+                        <View style={styles.textContainer}>
+                            <Text style={styles.textBlack}>
+                                I understand that I have to supply a document from my doctor with indication of my illness
+                            </Text>
+                        </View>
                         <View style={styles.btnContainer}>
                             <View style={styles.declineBtn}>
                                 <TouchableOpacity onPress={() => navigate('Report')}>
-                                    <Text style={styles.text}>Decline</Text>
+                                    <Text style={styles.textBlack}>Decline</Text>
                                 </TouchableOpacity>
                             </View>
 
@@ -42,59 +44,62 @@ const styles = StyleSheet.create({
         flex: 1,
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
-        paddingTop: 15,
         backgroundColor: '#888888',
         justifyContent: 'center'
     },
     dialogView:{
         width: Dimensions.get('window').width-20,
-        height: Dimensions.get('window').height/3,
+        height: Dimensions.get('window').height/3.4,
         marginLeft:10,
         backgroundColor: '#fff',
+        borderWidth: 0.5,
         borderRadius: 6,
-        borderWidth:1,
-        borderColor:'#cac8cf',
-        borderStyle: 'solid',
-
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
     },
     dialogContainer:{
         width: Dimensions.get('window').width-20,
-        height: Dimensions.get('window').height/5,
-
+        // height: Dimensions.get('window').height/5.5,
+        justifyContent: 'space-between',
     },
     btnContainer:{
-        flex:1,
+
         width: Dimensions.get('window').width-20,
-        marginTop:10,
+        marginTop:15,
         flexDirection: 'row',
         justifyContent: 'space-around',
+    },
+    textContainer:{
+
     },
     text:{
         fontSize:16,
         paddingLeft:10,
         paddingRight:10,
         textAlign:'center',
+        color:'#ffffff'
+    },
+    textBlack:{
+        fontSize:18,
+        paddingLeft:10,
+        paddingRight:10,
+        textAlign:'center',
+        color:'#58585d'
     },
     acceptBtn:{
-        width: Dimensions.get('window').width/3,
-        height: 60,
+        width: Dimensions.get('window').width/2.5,
+        height: 56,
+        borderWidth: 0.5,
         borderRadius: 6,
-        borderWidth:1,
-        borderColor:'#cac8cf',
-        borderStyle: 'solid',
-        backgroundColor:'#02509f',
+        backgroundColor:'#537dff',
         justifyContent: 'center'
         // paddingTop:5,
     },
     declineBtn:{
-        width: Dimensions.get('window').width/3,
-        height: 60,
+        width: Dimensions.get('window').width/2.5,
+        height: 56,
+        borderWidth: 0.5,
         borderRadius: 6,
-        borderWidth:1,
-        borderColor:'#cac8cf',
-        borderStyle: 'solid',
         paddingTop:5,
         backgroundColor:'#dee0e2',
         justifyContent: 'center'
@@ -106,11 +111,9 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         width: Dimensions.get('window').width/3,
+        borderWidth: 0.5,
         borderRadius: 6,
-        borderWidth:1,
-        borderColor:'#cac8cf',
-        borderStyle: 'solid',
-        backgroundColor:'#02509f',
+        backgroundColor:'#537dff',
     },
 
 });
