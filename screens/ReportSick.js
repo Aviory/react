@@ -84,7 +84,7 @@ export default class ReportSick extends React.Component {
                         margin:10,
                         width: Dimensions.get('window').width-20,
                         height: 60,
-                        justifyContent: 'center'}} >
+                        justifyContent: 'center'}}>
                         <TouchableOpacity onPress={() => this._onToggleState("onboard")}>
                             <Text style={{color:onboardColor,fontSize:16,
                                 paddingLeft:10,
@@ -138,7 +138,7 @@ export default class ReportSick extends React.Component {
                             <Text style={{color:day3Color,fontSize:16,
                                 paddingLeft:10,
                                 paddingRight:10,
-                                textAlign:'center'}}>>Day 3</Text>
+                                textAlign:'center'}}>Day 3</Text>
                         </TouchableOpacity>
                     </View>
 

@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     },
 
     inputText:{
+
         margin:10,
         fontSize:16,
     },

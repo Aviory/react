@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
         height: 316,
         flexDirection: 'column',
         justifyContent: 'space-around',
-
     },
     imageContainer:{
 

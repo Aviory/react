@@ -5,14 +5,12 @@ import { ExpoLinksView } from '@expo/samples';
 import PropTypes from 'prop-types';
 import { createStackNavigator,StackNavigator } from 'react-navigation';
 
-
-
 export default class Authorization extends React.Component {
     static navigationOptions = {
         header: null,
     };
-
     render() {
+        const fName = "Fullname";
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
@@ -26,14 +24,12 @@ export default class Authorization extends React.Component {
                 </Text>
 
                 <View style={styles.inputView}>
-
-                    <TextInput style={styles.topText}>
-                        Fullname
-                    </TextInput>
+                        <TextInput style={styles.topText}>
+                            Fullname
+                        </TextInput>
                 </View>
 
                 <View style={styles.inputView}>
-
                     <TextInput style={styles.topText}>
                         Personal number / Samordningsnummer
                     </TextInput>
@@ -43,9 +39,7 @@ export default class Authorization extends React.Component {
                     <TouchableOpacity onPress={() => navigate('Home')}>
                         <Text style={styles.text}>Register</Text>
                     </TouchableOpacity>
-
                 </View>
-
             </View>
         );
     }
@@ -59,7 +53,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     inputView:{
-
+        justifyContent: 'center',
         borderRadius: 6,
         backgroundColor: '#ffffff',
         borderWidth:1,
@@ -100,6 +94,4 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color:'#ffffff'
     },
-
-
 });

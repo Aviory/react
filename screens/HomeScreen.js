@@ -150,6 +150,9 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textAlign: 'center',
   },
+    inputText:{
+      marginLeft:10,
+    },
     toggleContainer:{
         width:Dimensions.get('window').width-10,
        // flex:1,
