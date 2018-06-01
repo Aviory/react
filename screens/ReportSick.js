@@ -24,6 +24,10 @@ export default class ReportSick extends React.Component {
         day3:false,
     }
 
+    // _onActiveColor(isActive){
+    //     return isActive?"#ffffff":"#000000";
+    // }
+
     _calendar(){
 
     }
@@ -60,7 +64,6 @@ export default class ReportSick extends React.Component {
     }
     render() {
         const { navigate } = this.props.navigation;
-        // const {toggle} = this.state;
         const onboardColor = this.state.toggle?"#ffffff":"#000000";
         const onboardValue = this.state.toggle?"#02509f":"#e8e8e8";
         const day1Color = this.state.day1?"#ffffff":"#000000";
@@ -176,8 +179,6 @@ export default class ReportSick extends React.Component {
             </View>
         );
     }
-
-
 }
 
 const styles = StyleSheet.create({

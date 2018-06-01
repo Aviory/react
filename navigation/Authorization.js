@@ -14,7 +14,6 @@ export default class Authorization extends React.Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-
                 {/*<Text style={styles.getStartedText}>*/}
                     {/*Change this text and your app will automatically reload.*/}
                 {/*</Text>*/}
@@ -24,15 +23,23 @@ export default class Authorization extends React.Component {
                 </Text>
 
                 <View style={styles.inputView}>
-                        <TextInput style={styles.topText}>
-                            Fullname
-                        </TextInput>
+                    <TextInput
+                        style={styles.topText}
+                        autoCapitalize="none"
+                        placeholder="Fullname"
+                        clearButtonMode="while-editing"
+                        underlineColorAndroid='rgba(0,0,0,0)'
+                    />
                 </View>
 
                 <View style={styles.inputView}>
-                    <TextInput style={styles.topText}>
-                        Personal number / Samordningsnummer
-                    </TextInput>
+                    <TextInput
+                        style={styles.topText}
+                        autoCapitalize="none"
+                        placeholder="Personal number / Samordningsnummer"
+                        clearButtonMode="while-editing"
+                        underlineColorAndroid='rgba(0,0,0,0)'
+                    />
                 </View>
 
                 <View style={styles.btnStyleClick}>

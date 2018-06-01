@@ -39,10 +39,9 @@ export default class ContactScreen extends React.Component {
                             Message
                         </MonoText>
                         <TextInput style={styles.inputText}
+                                   underlineColorAndroid='rgba(0,0,0,0)'
                                    multiline={true}
                                    numberOfLines={4}>
-
-
                         </TextInput>
                     </View>
 

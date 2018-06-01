@@ -35,6 +35,7 @@ export default class SettingsScreen extends React.Component {
                         </MonoText>
                         <TextInput
                             style={styles.inputText}
+                            underlineColorAndroid='rgba(0,0,0,0)'
                         />
                     </View>
                     <View style={styles.inputView}>
@@ -43,6 +44,7 @@ export default class SettingsScreen extends React.Component {
                         </MonoText>
                         <TextInput
                             style={styles.inputText}
+                            underlineColorAndroid='rgba(0,0,0,0)'
                         />
                     </View>
                     <View style={styles.inputView}>
@@ -51,10 +53,12 @@ export default class SettingsScreen extends React.Component {
                         </MonoText>
                         <TextInput
                             style={styles.inputText}
+                            underlineColorAndroid='rgba(0,0,0,0)'
                         />
                     </View>
                     <View style={styles.inputView}>
                         <MonoText style={styles.topText}>
+                            underlineColorAndroid='rgba(0,0,0,0)'
                             Language
                         </MonoText>
                         <TextInput

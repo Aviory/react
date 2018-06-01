@@ -33,6 +33,7 @@ export default class HomeScreen extends React.Component {
                   </MonoText>
                 <TextInput
                   style={styles.inputText}
+                  underlineColorAndroid='rgba(0,0,0,0)'
                 />
               </View>
               <View style={styles.inputView}>
@@ -41,6 +42,7 @@ export default class HomeScreen extends React.Component {
                   </MonoText>
                 <TextInput
                   style={styles.inputText}
+                  underlineColorAndroid='rgba(0,0,0,0)'
                 />
               </View>
               <View style={styles.inputView}>         
@@ -48,7 +50,8 @@ export default class HomeScreen extends React.Component {
                       Reason
                   </MonoText>                         
                 <TextInput                            
-                  style={styles.inputText}            
+                  style={styles.inputText}
+                  underlineColorAndroid='rgba(0,0,0,0)'
                 />                                    
               </View>                                 
 
